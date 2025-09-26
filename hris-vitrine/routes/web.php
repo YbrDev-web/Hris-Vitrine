@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/contact', [HomeController::class, 'contactForm'])->name('contact.form');
+Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
+
