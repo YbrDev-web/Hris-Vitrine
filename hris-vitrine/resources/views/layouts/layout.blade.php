@@ -113,7 +113,7 @@
             <ul class="navbar-nav">
                 <li><a class="nav-link" href="{{ route('home') }}">Accueil</a></li>
                 <li><a class="nav-link" href="{{ route('about') }}">À propos</a></li>
-                <li><a class="nav-link" href="#">Services</a></li>
+                <li><a class="nav-link" href="{{ route('services') }}">Services</a></li>
                 <li><a class="nav-link" href="{{ route('contact.form') }}">Contact</a></li>
             </ul>
         </div>
