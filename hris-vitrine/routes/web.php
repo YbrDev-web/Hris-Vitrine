@@ -11,4 +11,6 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contactForm'])->name('contact.form');
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
+Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
+
 
