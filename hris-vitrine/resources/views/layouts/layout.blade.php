@@ -103,7 +103,7 @@
 <body>
 
 <!-- ✅ NAVBAR EN HAUT -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">HRIS PRO CONSULTING</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
