@@ -52,6 +52,6 @@ class HomeController extends Controller
 
     public function partenaires()
     {
-        return view('partenaires');
+        return view('partners');
     }
 }
