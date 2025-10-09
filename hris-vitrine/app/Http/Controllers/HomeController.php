@@ -49,4 +49,9 @@ class HomeController extends Controller
             return redirect()->back()->with('error', '❌ Erreur : ' . $e->getMessage());
         }
     }
+
+    public function partenaires()
+    {
+        return view('partenaires');
+    }
 }
