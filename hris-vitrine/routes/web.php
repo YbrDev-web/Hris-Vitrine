@@ -13,5 +13,6 @@ Route::get('/contact', [HomeController::class, 'contactForm'])->name('contact.fo
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
+Route::get('/partenaires', [HomeController::class, 'partenaires'])->name('partenaires');
 
 
