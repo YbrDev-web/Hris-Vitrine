@@ -216,12 +216,12 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li><a class="nav-link" href="{{ route('home') }}">Accueil</a></li>
-                <li><a class="nav-link" href="{{ route('about') }}">À propos</a></li>
-                <li><a class="nav-link" href="{{ route('partenaires') }}">Partenaires</a></li>
-                <li><a class="nav-link" href="{{ route('services') }}">Services</a></li>
-                <li><a class="nav-link" href="{{ route('contact.form') }}">Contact</a></li>
-                <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
+            <li><a class="nav-link" href="{{ route('home') }}"><span data-translate="home">Accueil</span></a></li>
+            <li><a class="nav-link" href="{{ route('about') }}"><span data-translate="about">À propos</span></a></li>
+            <li><a class="nav-link" href="{{ route('partenaires') }}"><span data-translate="partners">Partenaires</span></a></li>
+            <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
+            <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
+            <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
             </ul>
         </div>
     </div>
@@ -291,6 +291,35 @@
     localStorage.setItem('dark-mode', isDark);
   });
 </script>
+
+<script>
+  const langButtons = document.querySelectorAll('.dropdown-item');
+  const langDropdown = document.getElementById('langDropdown');
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    langDropdown.textContent = (lang === 'fr') ? "🌍 FR - FR" : "🌍 EN - EN";
+    
+    // ✅ Met à jour tous les textes traduisibles
+    document.querySelectorAll('[data-translate]').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      el.textContent = translations[lang][key] || el.textContent;
+    });
+  }
+
+  // ✅ Applique la langue sauvegardée au chargement
+  const savedLang = localStorage.getItem('lang') || 'fr';
+  setLanguage(savedLang);
+
+  // ✅ Lors du clic sur un bouton de langue
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLang = btn.textContent.includes('EN') ? 'en' : 'fr';
+      setLanguage(selectedLang);
+    });
+  });
+</script>
+
 
 
 </body>
