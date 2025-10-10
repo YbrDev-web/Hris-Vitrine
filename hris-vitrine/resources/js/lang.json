@@ -1,0 +1,23 @@
+{
+    "fr": {
+      "home": "Accueil",
+      "about": "À propos",
+      "partners": "Partenaires",
+      "services": "Services",
+      "contact": "Contact",
+      "welcome": "Bienvenue chez HRIS PRO CONSULTING",
+      "description": "Nous accompagnons les entreprises dans la mise en place, le déploiement et la maintenance de leurs Systèmes d’Information RH.",
+      "footer": "Tous droits réservés"
+    },
+    "en": {
+      "home": "Home",
+      "about": "About",
+      "partners": "Partners",
+      "services": "Services",
+      "contact": "Contact",
+      "welcome": "Welcome to HRIS PRO CONSULTING",
+      "description": "We support companies in the implementation, deployment, and maintenance of their HR Information Systems.",
+      "footer": "All rights reserved"
+    }
+  }
+  

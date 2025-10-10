@@ -245,33 +245,11 @@
 
 <!-- ✅ FOOTER -->
 <footer>
-    <span>HRIS PRO CONSULTING</span> &copy; {{ date('Y') }} — Tous droits réservés
+    <span>HRIS PRO CONSULTING</span> &copy; {{ date('Y') }} — <span data-translate="footer">Tous droits réservés
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-  const translations = {
-    fr: {
-      home: "Accueil",
-      about: "À propos",
-      partners: "Partenaires",
-      services: "Services",
-      contact: "Contact",
-      welcome: "Bienvenue chez HRIS PRO CONSULTING",
-      description: "Nous accompagnons les entreprises dans la mise en place, le déploiement et la maintenance de leurs Systèmes d’Information RH."
-    },
-    en: {
-      home: "Home",
-      about: "About",
-      partners: "Partners",
-      services: "Services",
-      contact: "Contact",
-      welcome: "Welcome to HRIS PRO CONSULTING",
-      description: "We support companies in the implementation, deployment, and maintenance of their HR Information Systems."
-    }
-  };
-</script>
 
 
 <script>
@@ -293,31 +271,36 @@
 </script>
 
 <script>
-  const langButtons = document.querySelectorAll('.dropdown-item');
-  const langDropdown = document.getElementById('langDropdown');
+async function loadTranslations(lang) {
+  const response = await fetch('/js/lang.json');
+  const translations = await response.json();
+  return translations[lang];
+}
 
-  function setLanguage(lang) {
-    localStorage.setItem('lang', lang);
-    langDropdown.textContent = (lang === 'fr') ? "🌍 FR - FR" : "🌍 EN - EN";
-    
-    // ✅ Met à jour tous les textes traduisibles
-    document.querySelectorAll('[data-translate]').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      el.textContent = translations[lang][key] || el.textContent;
-    });
-  }
+async function setLanguage(lang) {
+  const translations = await loadTranslations(lang);
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+    if (translations[key]) {
+      el.textContent = translations[key];
+    }
+  });
 
-  // ✅ Applique la langue sauvegardée au chargement
+  localStorage.setItem('lang', lang);
+  document.getElementById('langDropdown').textContent = (lang === 'fr') ? "🌍 FR - FR" : "🌍 EN - EN";
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
   const savedLang = localStorage.getItem('lang') || 'fr';
-  setLanguage(savedLang);
+  await setLanguage(savedLang);
 
-  // ✅ Lors du clic sur un bouton de langue
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  document.querySelectorAll('.dropdown-item').forEach(btn => {
+    btn.addEventListener('click', async () => {
       const selectedLang = btn.textContent.includes('EN') ? 'en' : 'fr';
-      setLanguage(selectedLang);
+      await setLanguage(selectedLang);
     });
   });
+});
 </script>
 
 
