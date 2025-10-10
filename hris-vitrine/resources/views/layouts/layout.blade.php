@@ -225,6 +225,15 @@
             </ul>
         </div>
     </div>
+    <div class="dropdown mx-2">
+    <button class="btn btn-link text-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      🌍 FR - FR
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
+      <li><button class="dropdown-item" type="button">FR - FR</button></li>
+      <li><button class="dropdown-item" type="button">EN - EN</button></li>
+    </ul>
+  </div>
 </nav>
 
 
@@ -240,6 +249,30 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const translations = {
+    fr: {
+      home: "Accueil",
+      about: "À propos",
+      partners: "Partenaires",
+      services: "Services",
+      contact: "Contact",
+      welcome: "Bienvenue chez HRIS PRO CONSULTING",
+      description: "Nous accompagnons les entreprises dans la mise en place, le déploiement et la maintenance de leurs Systèmes d’Information RH."
+    },
+    en: {
+      home: "Home",
+      about: "About",
+      partners: "Partners",
+      services: "Services",
+      contact: "Contact",
+      welcome: "Welcome to HRIS PRO CONSULTING",
+      description: "We support companies in the implementation, deployment, and maintenance of their HR Information Systems."
+    }
+  };
+</script>
+
 
 <script>
   // ✅ Mode sombre persistant
@@ -258,5 +291,7 @@
     localStorage.setItem('dark-mode', isDark);
   });
 </script>
+
+
 </body>
 </html>
