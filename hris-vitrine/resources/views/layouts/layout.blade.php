@@ -162,6 +162,47 @@
                 padding: 30px 20px;
             }
         }
+
+        body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #1f1f1f;
+    }
+
+    body.dark-mode .navbar-nav a {
+      color: #f1f1f1 !important;
+    }
+
+    body.dark-mode footer {
+      background-color: #000;
+      color: #aaa;
+    }
+
+    body.dark-mode .dropdown-menu {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+    }
+
+    body.dark-mode .dropdown-item {
+      color: #ddd;
+    }
+
+    body.dark-mode .dropdown-item:hover {
+      background-color: #2b2b2b;
+      color: #00b050 !important;
+    }
+
+    body.dark-mode .topbar {
+      background-color: #111;
+      color: #bbb;
+    }
+
+    body.dark-mode .topbar .icon {
+      color: #bbb;
+    }
     </style>
 </head>
 <body>
@@ -180,10 +221,13 @@
                 <li><a class="nav-link" href="{{ route('partenaires') }}">Partenaires</a></li>
                 <li><a class="nav-link" href="{{ route('services') }}">Services</a></li>
                 <li><a class="nav-link" href="{{ route('contact.form') }}">Contact</a></li>
+                <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
             </ul>
         </div>
     </div>
 </nav>
+
+
 
 <!-- ✅ CONTENU -->
 <main style="margin-top: 80px;">
@@ -196,5 +240,23 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ✅ Mode sombre persistant
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  if (localStorage.getItem('dark-mode') === 'true') {
+    body.classList.add('dark-mode');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('dark-mode', isDark);
+  });
+</script>
 </body>
 </html>
