@@ -25,7 +25,7 @@
         <div class="col-md-4">
             <h4>Optimisation des processus</h4>
             <p>Audit et amélioration continue de vos processus RH pour une performance durable.</p>
-            <a href="{{ route('about') }}" class="btn-main mt-3">Services</a>
+            <a href="{{ route('services') }}" class="btn-main mt-3">Services</a>
         </div>
     </div>
 </section>
