@@ -5,7 +5,7 @@
 @section('content')
 <section class="py-5">
   <div class="container">
-    <h1 class="text-center mb-5 fw-bold" style="color:#21ACC4;">Espace Knowledge</h1>
+    <h1 class="text-center mb-5 fw-bold" style="color:#21ACC4;">Espace Knowledge & Connaissances</h1>
 
     <p class="text-center mb-5 text-muted">
       Découvrez nos articles et ressources autour du SIRH, de la transformation digitale et des solutions Workday.
@@ -15,9 +15,11 @@
 
       <!-- ✅ Exemple de Card avec évaluation -->
       @foreach ([
+        ['title' => 'Workday et la gestion des talents', 'img' => 'https://images.unsplash.com/photo-1581092334507-1e7e3a68f50b?auto=format&fit=crop&w=800&q=80', 'desc' => 'Découvrez comment Workday révolutionne la gestion du capital humain.'],
         ['title' => 'Transformation Digitale RH', 'img' => 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les enjeux et défis de la digitalisation RH.'],
         ['title' => 'Optimisation des Données RH', 'img' => 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80', 'desc' => 'Comment mieux piloter la performance RH avec la data.'],
         ['title' => 'Formation & Adoption Workday', 'img' => 'https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les bonnes pratiques pour favoriser l’adoption de Workday.'],
+        ['title' => 'Sécurité des Données RH', 'img' => 'https://images.unsplash.com/photo-1590608897129-79da98d159f6?auto=format&fit=crop&w=800&q=80', 'desc' => 'Protégez vos données sensibles avec des audits réguliers.']
       ] as $index => $card)
       <div class="col-md-4">
         <div class="card shadow-sm border-0 h-100 knowledge-card">
@@ -43,3 +45,77 @@
     </div>
   </div>
 </section>
+
+<!-- ✅ STYLE -->
+<style>
+.knowledge-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.knowledge-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.knowledge-card img {
+  height: 200px;
+  object-fit: cover;
+}
+.rating .star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+.rating .star.active,
+.rating .star:hover,
+.rating .star:hover ~ .star {
+  color: #FFD700;
+}
+.rating .star.active ~ .star {
+  color: #ccc !important;
+}
+</style>
+
+<!-- ✅ SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const ratings = {};
+
+  document.querySelectorAll('.rating').forEach(ratingDiv => {
+    const index = ratingDiv.dataset.index;
+    const stars = ratingDiv.querySelectorAll('.star');
+    const avgDisplay = document.getElementById('avg-' + index);
+
+    let total = 0;
+    let count = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = parseInt(star.dataset.value);
+
+        // Simulation d'une base de données locale
+        total += value;
+        count++;
+        const average = (total / count).toFixed(1);
+        avgDisplay.textContent = average;
+
+        // Active les bonnes étoiles
+        stars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < value; i++) stars[i].classList.add('active');
+      });
+
+      // Effet hover visuel
+      star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+        for (let i = 0; i < star.dataset.value; i++) stars[i].style.color = '#FFD700';
+      });
+
+      star.addEventListener('mouseleave', () => {
+        stars.forEach(s => s.style.color = s.classList.contains('active') ? '#FFD700' : '#ccc');
+      });
+    });
+  });
+});
+</script>
+@endsection
