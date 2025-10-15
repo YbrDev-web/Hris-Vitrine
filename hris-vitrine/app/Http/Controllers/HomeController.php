@@ -52,6 +52,6 @@ class HomeController extends Controller
 
     public function knowledge()
     {
-        return view('partners');
+        return view('Knowledge');
     }
 }
