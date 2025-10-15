@@ -13,8 +13,8 @@
 
     <style>
         :root {
-            --primary: #00b050;
-            --primary-dark: #009041;
+            --primary: #21ACC4;
+            --primary-dark: #187B8C;
             --text-dark: #1a1a1a;
             --bg-light: #f8f9fa;
         }
@@ -79,7 +79,7 @@
         }
 
         .btn-main {
-            background: var(--primary);
+            background: var(--primary-dark);
             color: white;
             padding: 12px 35px;
             border-radius: 50px;
