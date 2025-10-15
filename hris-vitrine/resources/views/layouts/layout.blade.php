@@ -216,6 +216,34 @@
     max-height: 60px;
     object-fit: contain;
   }
+
+  .knowledge-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.knowledge-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.knowledge-card img {
+  height: 200px;
+  object-fit: cover;
+}
+.rating .star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+.rating .star.active,
+.rating .star:hover,
+.rating .star:hover ~ .star {
+  color: #FFD700;
+}
+.rating .star.active ~ .star {
+  color: #ccc !important;
+}
     </style>
 </head>
 <body>
@@ -331,6 +359,45 @@
       setLanguage(selectedLang);
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const ratings = {};
+
+  document.querySelectorAll('.rating').forEach(ratingDiv => {
+    const index = ratingDiv.dataset.index;
+    const stars = ratingDiv.querySelectorAll('.star');
+    const avgDisplay = document.getElementById('avg-' + index);
+
+    let total = 0;
+    let count = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = parseInt(star.dataset.value);
+
+        // Simulation d'une base de données locale
+        total += value;
+        count++;
+        const average = (total / count).toFixed(1);
+        avgDisplay.textContent = average;
+
+        // Active les bonnes étoiles
+        stars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < value; i++) stars[i].classList.add('active');
+      });
+
+      // Effet hover visuel
+      star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+        for (let i = 0; i < star.dataset.value; i++) stars[i].style.color = '#FFD700';
+      });
+
+      star.addEventListener('mouseleave', () => {
+        stars.forEach(s => s.style.color = s.classList.contains('active') ? '#FFD700' : '#ccc');
+      });
+    });
+  });
+});
 </script>
 
 
