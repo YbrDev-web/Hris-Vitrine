@@ -43,14 +43,3 @@
     </div>
   </div>
 </section>
-
-<!-- ✅ STYLE -->
-<style>
-
-</style>
-
-<!-- ✅ SCRIPT -->
-<script>
-
-</script>
-@endsection
