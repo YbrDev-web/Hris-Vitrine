@@ -245,6 +245,14 @@
   color: #ccc !important;
 }
     </style>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z+Pcb8u5DEJmWxuQe1M9O1rcSg4Az+ljXTT8mf4hKqgIUVBIFNgEzJpIbIFx5F5hoWlBY3EliYHQm5q4+f6AMg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
 </head>
 <body>
 
