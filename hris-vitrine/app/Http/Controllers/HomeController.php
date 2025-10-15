@@ -50,7 +50,7 @@ class HomeController extends Controller
         }
     }
 
-    public function partenaires()
+    public function knowledge()
     {
         return view('partners');
     }

@@ -13,6 +13,6 @@ Route::get('/contact', [HomeController::class, 'contactForm'])->name('contact.fo
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
-Route::get('/Knowledge', [HomeController::class, 'partenaires'])->name('Knowledge');
+Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 
 

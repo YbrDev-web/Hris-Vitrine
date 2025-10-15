@@ -45,17 +45,6 @@
 </section>
 
 <style>
-.partner-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-}
-.partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-.partner-card img {
-    max-height: 60px;
-    object-fit: contain;
-}
+
 </style>
 @endsection
