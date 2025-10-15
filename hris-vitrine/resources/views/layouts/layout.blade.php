@@ -57,7 +57,7 @@
         /* ✅ SECTION HERO */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80')
+                url('https://www.thezoombackgrounds.com/cdn/shop/files/1ndI9LjGZhMQ_M5qK2SJ5cbAggi2gT0kM_grande.jpg?v=1737388181')
                 no-repeat center center / cover;
             color: white;
             padding: 180px 20px;
