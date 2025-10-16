@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('rates', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('knowledge_id'); // id de la carte
+            $table->unsignedBigInteger('user_id')->nullable(); // optionnel, si user connecté
+            $table->integer('value'); 
             $table->timestamps();
         });
     }
