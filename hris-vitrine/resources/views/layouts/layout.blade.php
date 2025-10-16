@@ -230,19 +230,32 @@
   height: 200px;
   object-fit: cover;
 }
+
+.rating {
+  display: inline-block;
+}
+
 .rating .star {
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   color: #ccc;
-  transition: color 0.2s ease;
+  transition: transform 0.15s ease, color 0.2s ease;
 }
-.rating .star.active,
+
 .rating .star:hover,
-.rating .star:hover ~ .star {
+.rating .star.hover,
+.rating .star.active {
   color: #FFD700;
+  transform: scale(1.15);
 }
+
 .rating .star.active ~ .star {
   color: #ccc !important;
+}
+
+.rating small {
+  font-size: 0.9rem;
+  color: #777;
 }
     </style>
     <link
