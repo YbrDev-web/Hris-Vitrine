@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('knowledge', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
-            $table->integer('rating')->default(0);
+            $table->text('description');
+            $table->string('image_url')->nullable();
+            $table->float('average_rating')->default(0);
+            $table->integer('rating_count')->default(0);
             $table->timestamps();
         });
     }
