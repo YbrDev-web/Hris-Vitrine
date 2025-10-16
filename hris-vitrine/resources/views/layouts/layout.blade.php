@@ -381,79 +381,40 @@
     });
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".rating").forEach((ratingDiv) => {
+  document.addEventListener('DOMContentLoaded', function() {
+  const ratings = {};
+
+  document.querySelectorAll('.rating').forEach(ratingDiv => {
     const index = ratingDiv.dataset.index;
-    const stars = ratingDiv.querySelectorAll(".star");
-    const avgDisplay = document.getElementById("avg-" + index);
+    const stars = ratingDiv.querySelectorAll('.star');
+    const avgDisplay = document.getElementById('avg-' + index);
 
-    // 📦 Charger la note sauvegardée
-    let saved = JSON.parse(localStorage.getItem(`rating-${index}`)) || {
-      total: 0,
-      count: 0,
-      userRated: false,
-      userValue: 0,
-    };
+    let total = 0;
+    let count = 0;
 
-    let { total, count, userRated, userValue } = saved;
-
-    // 🧮 Afficher la moyenne si elle existe
-    if (count > 0) avgDisplay.textContent = (total / count).toFixed(1);
-
-    // 🔄 Mettre à jour l’affichage des étoiles (au rechargement)
-    if (userRated) {
-      for (let i = 0; i < userValue; i++) stars[i].classList.add("active");
-    }
-
-    // 🌟 Gestion des clics sur les étoiles
-    stars.forEach((star) => {
-      star.addEventListener("click", () => {
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
         const value = parseInt(star.dataset.value);
 
-        // ✅ Si l’utilisateur a déjà noté, on retire son ancienne note
-        if (userRated) {
-          total -= userValue;
-          count -= 1;
-        }
-
-        // ➕ Ajout de la nouvelle note
+        // Simulation d'une base de données locale
         total += value;
-        count += 1;
-        userRated = true;
-        userValue = value;
-
-        // 🧮 Calcul et affichage de la moyenne
+        count++;
         const average = (total / count).toFixed(1);
         avgDisplay.textContent = average;
 
-        // 💾 Sauvegarde locale
-        localStorage.setItem(
-          `rating-${index}`,
-          JSON.stringify({ total, count, userRated, userValue })
-        );
-
-        // 🎨 Mise à jour visuelle
-        stars.forEach((s) => s.classList.remove("active"));
-        for (let i = 0; i < value; i++) stars[i].classList.add("active");
+        // Active les bonnes étoiles
+        stars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < value; i++) stars[i].classList.add('active');
       });
 
-      // ✨ Effet au survol
-      star.addEventListener("mouseover", () => {
-        stars.forEach((s) => s.classList.remove("hover"));
-        for (let i = 0; i < star.dataset.value; i++)
-          stars[i].classList.add("hover");
+      // Effet hover visuel
+      star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+        for (let i = 0; i < star.dataset.value; i++) stars[i].style.color = '#FFD700';
       });
 
-      star.addEventListener("mouseleave", () => {
-        stars.forEach((s) => s.classList.remove("hover"));
-      });
-
-      // ♿ Gestion au clavier (barre espace ou entrée)
-      star.addEventListener("keydown", (e) => {
-        if (e.key === " " || e.key === "Enter") {
-          e.preventDefault();
-          star.click();
-        }
+      star.addEventListener('mouseleave', () => {
+        stars.forEach(s => s.style.color = s.classList.contains('active') ? '#FFD700' : '#ccc');
       });
     });
   });
