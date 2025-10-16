@@ -231,32 +231,35 @@
   object-fit: cover;
 }
 
-.rating {
-  display: inline-block;
-}
-
 .rating .star {
   font-size: 2rem;
-  cursor: pointer;
   color: #ccc;
-  transition: transform 0.15s ease, color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  outline: none;
 }
 
 .rating .star:hover,
-.rating .star.hover,
-.rating .star.active {
-  color: #FFD700;
-  transform: scale(1.15);
+.rating .star:focus {
+  transform: scale(1.2);
+  color: #00b050;
 }
 
-.rating .star.active ~ .star {
+.rating .star.selected {
+  color: #00b050;
+}
+
+.rating .star:not(.selected):hover ~ .star {
   color: #ccc !important;
 }
 
 .rating small {
   font-size: 0.9rem;
-  color: #777;
+  color: #aaa;
 }
+
     </style>
     <link
   rel="stylesheet"
@@ -408,44 +411,30 @@
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-  const ratings = {};
+  document.querySelectorAll('.rating').forEach(rating => {
+  const cardId = rating.dataset.cardId;
+  const stars = rating.querySelectorAll('.star');
+  const avgSpan = rating.querySelector('.average');
 
-  document.querySelectorAll('.rating').forEach(ratingDiv => {
-    const index = ratingDiv.dataset.index;
-    const stars = ratingDiv.querySelectorAll('.star');
-    const avgDisplay = document.getElementById('avg-' + index);
+  // 🔹 Charger la note existante depuis localStorage
+  const saved = localStorage.getItem(`rating-${cardId}`);
+  if (saved) updateStars(stars, saved, avgSpan);
 
-    let total = 0;
-    let count = 0;
-
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
-        const value = parseInt(star.dataset.value);
-
-        // Simulation d'une base de données locale
-        total += value;
-        count++;
-        const average = (total / count).toFixed(1);
-        avgDisplay.textContent = average;
-
-        // Active les bonnes étoiles
-        stars.forEach(s => s.classList.remove('active'));
-        for (let i = 0; i < value; i++) stars[i].classList.add('active');
-      });
-
-      // Effet hover visuel
-      star.addEventListener('mouseover', () => {
-        stars.forEach(s => s.classList.remove('hover'));
-        for (let i = 0; i < star.dataset.value; i++) stars[i].style.color = '#FFD700';
-      });
-
-      star.addEventListener('mouseleave', () => {
-        stars.forEach(s => s.style.color = s.classList.contains('active') ? '#FFD700' : '#ccc');
-      });
+  // 🔹 Gérer le clic sur une étoile
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.dataset.value;
+      localStorage.setItem(`rating-${cardId}`, value);
+      updateStars(stars, value, avgSpan);
     });
   });
 });
+
+function updateStars(stars, value, avgSpan) {
+  stars.forEach(s => s.classList.toggle('selected', s.dataset.value <= value));
+  avgSpan.textContent = Number(value).toFixed(1);
+}
+
 </script>
 
 
