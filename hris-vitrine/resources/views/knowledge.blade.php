@@ -1,11 +1,11 @@
 @extends('layouts.layout')
 
-@section('title', 'Knowledge & Connaissances')
+@section('title', 'Knowledge')
 
 @section('content')
 <section class="py-5">
   <div class="container">
-    <h1 class="text-center mb-5 fw-bold" style="color:#21ACC4;">Espace Knowledge & Connaissances</h1>
+    <h1 class="text-center mb-5 fw-bold" style="color:#21ACC4;">Base de Connaissances</h1>
 
     <p class="text-center mb-5 text-muted">
       Découvrez nos articles et ressources autour du SIRH, de la transformation digitale et des solutions Workday.
