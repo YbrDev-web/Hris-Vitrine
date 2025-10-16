@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable(); // optionnel, si user connecté
             $table->integer('value'); 
             $table->timestamps();
+
+            $table->foreign('knowledge_id')->references('id')->on('knowledges')->onDelete('cascade');
         });
     }
 
