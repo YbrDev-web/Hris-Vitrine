@@ -280,7 +280,7 @@
             <ul class="navbar-nav">
             <li><a class="nav-link" href="{{ route('home') }}"><span data-translate="home">Accueil</span></a></li>
             <li><a class="nav-link" href="{{ route('about') }}"><span data-translate="about">À propos</span></a></li>
-            <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="partners">Knowledge</span></a></li>
+            <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="partners">Article</span></a></li>
             <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
             <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
             <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
@@ -317,7 +317,7 @@
     fr: {
       home: "Accueil",
       about: "À propos",
-      partners: "Knowledge",
+      Article: "Article",
       services: "Services",
       contact: "Contact",
       welcome: "Bienvenue chez HRIS PRO CONSULTING",
