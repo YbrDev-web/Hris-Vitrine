@@ -20,7 +20,7 @@
         <div class="col-md-4">
             <h4>Intégration Workday</h4>
             <p>Déploiement, configuration et accompagnement au changement pour vos équipes.</p>
-            <a href="{{ route('contact.form') }}" class="btn-main mt-3">Contactez-nous</a>
+            <a href="{{ route('Knowledge') }}" class="btn-main mt-3">Knowledge</a>
         </div>
         <div class="col-md-4">
             <h4>Optimisation des processus</h4>
