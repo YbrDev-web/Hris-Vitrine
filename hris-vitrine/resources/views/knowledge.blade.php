@@ -27,13 +27,13 @@
             <p class="card-text text-muted flex-grow-1">{{ $card['desc'] }}</p>
 
             <!-- ⭐ Zone de notation -->
-            <div class="rating mt-3 text-center" data-index="{{ $index }}">
-              <span class="star" data-value="1">★</span>
-              <span class="star" data-value="2">★</span>
-              <span class="star" data-value="3">★</span>
-              <span class="star" data-value="4">★</span>
-              <span class="star" data-value="5">★</span>
-              <small class="d-block text-muted mt-2">Note : <span class="average" id="avg-{{ $index }}">0.0</span> / 5</small>
+            <div class="rating mt-3 text-center" data-index="1">
+              <span class="star" data-value="1" tabindex="0" aria-label="1 étoile">★</span>
+              <span class="star" data-value="2" tabindex="0" aria-label="2 étoiles">★</span>
+              <span class="star" data-value="3" tabindex="0" aria-label="3 étoiles">★</span>
+              <span class="star" data-value="4" tabindex="0" aria-label="4 étoiles">★</span>
+              <span class="star" data-value="5" tabindex="0" aria-label="5 étoiles">★</span>
+              <small class="d-block text-muted mt-2">Note moyenne : <span class="average" id="avg-1">0.0</span> / 5</small>
             </div>
           </div>
         </div>
