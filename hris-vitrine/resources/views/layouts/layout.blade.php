@@ -306,8 +306,35 @@
 </main>
 
 <!-- ✅ FOOTER -->
-<footer>
-    <span>HRIS PRO CONSULTING</span> &copy; {{ date('Y') }} — <span data-translate="footer">Tous droits réservés
+<footer class="text-center py-3" style="background-color: #0a0a0a; color: #fff;">
+    <!-- Texte principal -->
+    <p class="mb-2">
+        <span style="color:#21ACC4; font-weight:600;">HRIS PRO CONSULTING</span>
+        &copy; {{ date('Y') }} —
+        <span data-translate="footer" style="color:#21ACC4;">Tous droits réservés</span>
+    </p>
+
+    <!-- 🔗 Section réseaux sociaux -->
+    <div class="social-section mt-3">
+        <p class="text-muted mb-2" style="font-size: 0.9rem;">Suivez-nous :</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="mx-2">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                     alt="Facebook" width="24" height="24"
+                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="mx-2">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                     alt="LinkedIn" width="24" height="24"
+                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="mx-2">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                     alt="Instagram" width="24" height="24"
+                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
+            </a>
+        </div>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
