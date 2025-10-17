@@ -467,6 +467,23 @@
       star.style.color = index < value ? '#FFD700' : '#ccc';
     });
   }
+
+  function socialLogin(platform) {
+    localStorage.setItem('userLoggedIn', 'true');
+    localStorage.setItem('loginMethod', platform);
+
+    Swal.fire({
+      icon: 'success',
+      title: `Connecté via ${platform}`,
+      text: 'Redirection en cours...',
+      showConfirmButton: false,
+      timer: 1500
+    });
+
+    setTimeout(() => {
+      window.location.href = document.referrer || "{{ route('home') }}";
+    }, 1600);
+  }
 });
 
 </script>
