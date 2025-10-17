@@ -24,7 +24,9 @@
       </button>
 
       <button class="btn btn-outline-danger d-flex align-items-center justify-content-center gap-2"
-              onclick="socialLogin('Instagram')" style="border-color:#E4405F;color:#E4405F">
+              onclick="socialLogin('Instagram')" style="border-color:#E4405F;color:#E4405F"><a href="https://www.instagram.com/accounts/login/?next=%2Flogin%2F&source=desktop_nav"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                     alt="Instagram" width="24" height="24"
+                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
         <i class="bi bi-instagram"></i> Continuer avec Instagram
       </button>
     </div>
