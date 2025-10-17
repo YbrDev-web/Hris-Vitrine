@@ -13,7 +13,6 @@
 
     <div class="row g-4" id="knowledge-list">
 
-      <!-- ✅ Exemple de Card avec évaluation -->
       @foreach ([
         ['title' => 'Transformation Digitale RH', 'img' => 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les enjeux et défis de la digitalisation RH.'],
         ['title' => 'Optimisation des Données RH', 'img' => 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=800&q=80', 'desc' => 'Comment mieux piloter la performance RH avec la data.'],
@@ -26,16 +25,16 @@
             <h5 class="card-title text-primary fw-bold">{{ $card['title'] }}</h5>
             <p class="card-text text-muted flex-grow-1">{{ $card['desc'] }}</p>
 
-            <!-- ⭐ Zone de notation -->
-            <div class="rating mt-3 text-center" data-card-id="1">
+            <!-- ⭐ Système de notation -->
+            <div class="rating mt-3 text-center" data-card-id="{{ $index }}">
               <div class="stars" role="radiogroup" aria-label="Évaluation de cette carte">
-                <button class="star" data-value="1" aria-label="1 étoile sur 5">★</button>
-                <button class="star" data-value="2" aria-label="2 étoiles sur 5">★</button>
-                <button class="star" data-value="3" aria-label="3 étoiles sur 5">★</button>
-                <button class="star" data-value="4" aria-label="4 étoiles sur 5">★</button>
-                <button class="star" data-value="5" aria-label="5 étoiles sur 5">★</button>
+                @for ($i = 1; $i <= 5; $i++)
+                  <button class="star" data-value="{{ $i }}" aria-label="{{ $i }} étoile sur 5">★</button>
+                @endfor
               </div>
-              <small class="d-block text-muted mt-2">Note moyenne : <span class="average" id="avg-1">0.0</span> / 5</small>
+              <small class="d-block text-muted mt-2">
+                Note moyenne : <span class="average" id="avg-{{ $index }}">0.0</span> / 5
+              </small>
             </div>
           </div>
         </div>

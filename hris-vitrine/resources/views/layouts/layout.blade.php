@@ -231,33 +231,31 @@
   object-fit: cover;
 }
 
-.rating .star {
-  font-size: 2rem;
+.rating {
+  font-size: 1.5rem;
   color: #ccc;
+  cursor: pointer;
+}
+
+.star {
   background: none;
   border: none;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
-  outline: none;
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.rating .star:hover,
-.rating .star:focus {
+.star:hover {
   transform: scale(1.2);
-  color: #00b050;
 }
 
-.rating .star.selected {
-  color: #00b050;
+.star.active {
+  color: #FFD700;
 }
 
-.rating .star:not(.selected):hover ~ .star {
-  color: #ccc !important;
-}
-
-.rating small {
-  font-size: 0.9rem;
-  color: #aaa;
+.star:hover,
+.star:focus {
+  color: #FFD700;
+  outline: none;
 }
 
     </style>
@@ -321,17 +319,17 @@
     <div class="social-section mt-3">
         <p class="text-muted mb-2" style="font-size: 0.9rem;">Suivez-nous :</p>
         <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="mx-2">
+            <a href="https://www.facebook.com/login" target="_blank" aria-label="Facebook" class="mx-2">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
                      alt="Facebook" width="24" height="24"
                      style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
             </a>
-            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="mx-2">
+            <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
                      alt="LinkedIn" width="24" height="24"
                      style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
             </a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="mx-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Flogin%2F&source=desktop_nav" target="_blank" aria-label="Instagram" class="mx-2">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
                      alt="Instagram" width="24" height="24"
                      style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
@@ -411,29 +409,65 @@
     });
   });
 
-  document.querySelectorAll('.rating').forEach(rating => {
-  const cardId = rating.dataset.cardId;
-  const stars = rating.querySelectorAll('.star');
-  const avgSpan = rating.querySelector('.average');
+  document.addEventListener('DOMContentLoaded', function() {
+  // Charger les notes existantes
+  const ratings = JSON.parse(localStorage.getItem('knowledgeRatings')) || {};
 
-  // 🔹 Charger la note existante depuis localStorage
-  const saved = localStorage.getItem(`rating-${cardId}`);
-  if (saved) updateStars(stars, saved, avgSpan);
+  document.querySelectorAll('.rating').forEach(ratingDiv => {
+    const cardId = ratingDiv.dataset.cardId;
+    const stars = ratingDiv.querySelectorAll('.star');
+    const avgDisplay = document.getElementById('avg-' + cardId);
 
-  // 🔹 Gérer le clic sur une étoile
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = star.dataset.value;
-      localStorage.setItem(`rating-${cardId}`, value);
-      updateStars(stars, value, avgSpan);
+    // Si une note existe déjà, l’afficher
+    if (ratings[cardId]) {
+      updateStars(stars, ratings[cardId].average);
+      avgDisplay.textContent = ratings[cardId].average.toFixed(1);
+    }
+
+    // Écouteur sur chaque étoile
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = parseInt(star.dataset.value);
+
+        // Enregistrer la note dans le localStorage
+        if (!ratings[cardId]) {
+          ratings[cardId] = { total: 0, count: 0, average: 0 };
+        }
+
+        ratings[cardId].total += value;
+        ratings[cardId].count++;
+        ratings[cardId].average = ratings[cardId].total / ratings[cardId].count;
+
+        localStorage.setItem('knowledgeRatings', JSON.stringify(ratings));
+
+        // Mettre à jour l’affichage
+        updateStars(stars, ratings[cardId].average);
+        avgDisplay.textContent = ratings[cardId].average.toFixed(1);
+      });
+
+      // Effet visuel au survol
+      star.addEventListener('mouseover', () => highlightStars(stars, parseInt(star.dataset.value)));
+      star.addEventListener('mouseleave', () => {
+        const avg = ratings[cardId]?.average || 0;
+        updateStars(stars, avg);
+      });
     });
   });
-});
 
-function updateStars(stars, value, avgSpan) {
-  stars.forEach(s => s.classList.toggle('selected', s.dataset.value <= value));
-  avgSpan.textContent = Number(value).toFixed(1);
-}
+  // Fonction pour mettre à jour les étoiles
+  function updateStars(stars, average) {
+    stars.forEach((star, index) => {
+      star.classList.toggle('active', index < Math.round(average));
+    });
+  }
+
+  // Fonction effet hover
+  function highlightStars(stars, value) {
+    stars.forEach((star, index) => {
+      star.style.color = index < value ? '#FFD700' : '#ccc';
+    });
+  }
+});
 
 </script>
 
