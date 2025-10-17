@@ -13,7 +13,7 @@
 <section class="container py-5">
     <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-            <img src="https://images.unsplash.com/photo-1581091215367-59ab6c4e6f03" class="img-fluid rounded shadow" alt="Équipe RHIS PRO CONSULTING">
+            <img src="images/logoHRIS.png" class="img-fluid rounded shadow" alt="Équipe RHIS PRO CONSULTING">
         </div>
         <div class="col-md-6">
             <h2 class="fw-bold mb-3">Notre mission</h2>
