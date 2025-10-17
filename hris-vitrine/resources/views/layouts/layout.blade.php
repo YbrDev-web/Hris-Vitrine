@@ -284,7 +284,7 @@
             <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="Article">Article</span></a></li>
             <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
             <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
-            <a href="{{ route('login') }}" class="btn btn-outline-light ms-3">Connexion</a>
+            <li><a href="{{ route('login') }}" class="btn btn-outline-light ms-3">Connexion</a>
 
             <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
             </ul>
