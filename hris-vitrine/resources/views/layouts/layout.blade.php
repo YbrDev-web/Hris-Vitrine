@@ -11,6 +11,9 @@
     <!-- ✅ Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
     <style>
         :root {
             --primary: #21ACC4;
@@ -75,7 +78,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: radial-gradient(circle at center, #0d0d0d, #000);
+            background: radial-gradient(circle at center, #21ACC4, #000);
         }
 
 /* ✅ Contenu du Hero au-dessus */
@@ -507,6 +510,45 @@
       window.location.href = document.referrer || "{{ route('home') }}";
     }, 1600);
   }
+
+  particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 90,
+      "density": {"enable": true, "value_area": 900}
+    },
+    "color": {"value": "#21ACC4"},
+    "shape": {"type": "circle"},
+    "opacity": {"value": 0.5, "random": false},
+    "size": {"value": 3, "random": true},
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#21ACC4",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.5,
+      "direction": "none",
+      "random": false,
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {"enable": true, "mode": "grab"},
+      "onclick": {"enable": true, "mode": "push"}
+    },
+    "modes": {
+      "grab": {"distance": 200, "line_linked": {"opacity": 0.6}},
+      "push": {"particles_nb": 4}
+    }
+  },
+  "retina_detect": true
+});
 });
 
 </script>

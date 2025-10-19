@@ -4,9 +4,11 @@
 
 @section('content')
 <section class="hero">
-    <h1>Votre partenaire SIRH & Workday</h1>
-    <p>HRIS PRO CONSULTING accompagne les entreprises dans l’optimisation de leurs systèmes RH.</p>
-    <a href="{{ route('contact.form') }}" class="btn-main mt-3">Contactez-nous</a>
+    <div id="particles-js"></div>
+    <div class="hero-content">
+        <h1>Votre partenaire SIRH & Workday</h1>
+        <p>HRIS PRO CONSULTING accompagne les entreprises dans l’optimisation de leurs systèmes RH.</p>
+        <a href="{{ route('contact.form') }}" class="btn-main mt-3">Contactez-nous</a>
 </section>
 
 <section class="container my-5 text-center">
