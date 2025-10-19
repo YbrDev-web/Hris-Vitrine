@@ -56,13 +56,34 @@
 
         /* ✅ SECTION HERO */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://www.thezoombackgrounds.com/cdn/shop/files/1ndI9LjGZhMQ_M5qK2SJ5cbAggi2gT0kM_grande.jpg?v=1737388181')
-                no-repeat center center / cover;
-            color: white;
-            padding: 180px 20px;
-            text-align: center;
+          position: relative;
+          height: 100vh;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          overflow: hidden;
         }
+
+/* ✅ Particles en arrière-plan */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at center, #0d0d0d, #000);
+        }
+
+/* ✅ Contenu du Hero au-dessus */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
 
         .hero h1 {
             font-size: 3.2rem;
