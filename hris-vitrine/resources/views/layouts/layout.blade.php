@@ -282,6 +282,11 @@
   outline: none;
 }
 
+body.dark-mode #particles-js {
+  background: radial-gradient(circle at center, #000, #0a0a0a);
+}
+
+
     </style>
     <link
   rel="stylesheet"
