@@ -286,6 +286,47 @@ body.dark-mode #particles-js {
   background: radial-gradient(circle at center, #000, #0a0a0a);
 }
 
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1b1b1b;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cookie {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-cookie.accept {
+  background-color: #007BFF;
+  color: white;
+}
+
+.btn-cookie.decline {
+  background-color: #444;
+  color: white;
+}
+
 
     </style>
     <link
@@ -554,11 +595,61 @@ body.dark-mode #particles-js {
   },
   "retina_detect": true
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const accepted = localStorage.getItem("cookiesAccepted");
+
+  // Si l'utilisateur a déjà répondu, on masque le bandeau
+  if (accepted === "true" || accepted === "false") {
+    banner.style.display = "none";
+  }
+
+  // Gestion des clics
+  document.getElementById("acceptCookies").addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.style.display = "none";
+    // Charger les scripts optionnels ici (ex: Google Analytics)
+    loadAnalytics();
+  });
+
+  document.getElementById("declineCookies").addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "false");
+    banner.style.display = "none";
+  });
+
+  // Exemple : fonction pour charger Google Analytics
+  function loadAnalytics() {
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXX");
+  }
+
+  // Si déjà accepté, on charge automatiquement les scripts
+  if (accepted === "true") {
+    loadAnalytics();
+  }
+});
 });
 
 </script>
 
-
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. 
+    <a href="/politique-de-confidentialite" target="_blank">En savoir plus</a>
+  </p>
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="btn-cookie accept">Accepter</button>
+    <button id="declineCookies" class="btn-cookie decline">Refuser</button>
+  </div>
+</div>
 
 
 
