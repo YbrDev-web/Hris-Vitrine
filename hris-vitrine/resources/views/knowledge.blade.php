@@ -41,7 +41,7 @@
       </div>
       @endforeach
 
-      <button style="background-color: #007BFF; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Ajouter article</button>
+      <button style="background-color: #187B8C; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Ajouter article</button>
 
 
     </div>
