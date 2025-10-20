@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KnowledgeController;
 
 
 
@@ -19,6 +20,7 @@ Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])-
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
+
 
 
 
