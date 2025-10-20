@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<div id="cookie-banner" class="cookie-banner">
+<!-- <div id="cookie-banner" class="cookie-banner">
   <p>
     Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. 
     <a href="/politique-de-confidentialite" target="_blank">En savoir plus</a>
@@ -649,7 +649,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <button id="acceptCookies" class="btn-cookie accept">Accepter</button>
     <button id="declineCookies" class="btn-cookie decline">Refuser</button>
   </div>
-</div>
+</div> -->
 
 
 
