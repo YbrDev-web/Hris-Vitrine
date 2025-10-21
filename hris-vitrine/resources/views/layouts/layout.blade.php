@@ -328,6 +328,10 @@ body.dark-mode #particles-js {
 }
 
 
+
+
+
+
     </style>
     <link
   rel="stylesheet"
@@ -367,6 +371,7 @@ body.dark-mode #particles-js {
     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
       <li><button class="dropdown-item" type="button">FR</button></li>
       <li><button class="dropdown-item" type="button">EN</button></li>
+      <li><button class="dropdown-item" type="button">EN(RU)</button></li>
     </ul>
   </div>
 </nav>
@@ -391,19 +396,9 @@ body.dark-mode #particles-js {
     <div class="social-section mt-3">
         <p class="text-muted mb-2" style="font-size: 0.9rem;">Suivez-nous :</p>
         <div class="social-icons">
-            <a href="https://www.facebook.com/login" target="_blank" aria-label="Facebook" class="mx-2">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-                     alt="Facebook" width="24" height="24"
-                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
-            </a>
             <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
                      alt="LinkedIn" width="24" height="24"
-                     style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
-            </a>
-            <a href="https://www.instagram.com/accounts/login/?next=%2Flogin%2F&source=desktop_nav" target="_blank" aria-label="Instagram" class="mx-2">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-                     alt="Instagram" width="24" height="24"
                      style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
             </a>
         </div>
@@ -596,62 +591,48 @@ body.dark-mode #particles-js {
   "retina_detect": true
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const banner = document.getElementById("cookie-banner");
-  const accepted = localStorage.getItem("cookiesAccepted");
+function openLinkedInPopup(provider = 'LinkedIn') {
+    const width = 600;
+    const height = 650;
+    const left = (window.innerWidth / 2) - (width / 2);
+    const top = (window.innerHeight / 2) - (height / 2);
 
-  // Si l'utilisateur a déjà répondu, on masque le bandeau
-  if (accepted === "true" || accepted === "false") {
-    banner.style.display = "none";
-  }
+    // Simulation d'une ouverture de fenêtre OAuth
+    const popup = window.open(
+        `https://auth.${provider.toLowerCase()}.com`,
+        `${provider} Login`,
+        `width=${width},height=${height},top=${top},left=${left}`
+    );
 
-  // Gestion des clics
-  document.getElementById("acceptCookies").addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "true");
-    banner.style.display = "none";
-    // Charger les scripts optionnels ici (ex: Google Analytics)
-    loadAnalytics();
-  });
+    // Simulation de la fermeture après un "login"
+    setTimeout(() => {
+        if (popup && !popup.closed) {
+            popup.close();
+            alert(`Connexion réussie via ${provider} ✅`);
+        }
+    }, 2000);
+}
 
-  document.getElementById("declineCookies").addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "false");
-    banner.style.display = "none";
-  });
+// Attacher les bons fournisseurs à chaque bouton
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button');
 
-  // Exemple : fonction pour charger Google Analytics
-  function loadAnalytics() {
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-XXXXXXX");
-  }
-
-  // Si déjà accepté, on charge automatiquement les scripts
-  if (accepted === "true") {
-    loadAnalytics();
-  }
+    buttons.forEach((btn) => {
+        if (btn.textContent.includes('LinkedIn')) {
+            btn.onclick = () => openLinkedInPopup('LinkedIn');
+        } else if (btn.textContent.includes('Google')) {
+            btn.classList.add('btn-google');
+            btn.onclick = () => openLinkedInPopup('Google');
+        } else if (btn.textContent.includes('Microsoft')) {
+            btn.classList.add('btn-microsoft');
+            btn.onclick = () => openLinkedInPopup('Microsoft');
+        }
+    });
 });
+
 });
 
 </script>
-
-<!-- <div id="cookie-banner" class="cookie-banner">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. 
-    <a href="/politique-de-confidentialite" target="_blank">En savoir plus</a>
-  </p>
-  <div class="cookie-actions">
-    <button id="acceptCookies" class="btn-cookie accept">Accepter</button>
-    <button id="declineCookies" class="btn-cookie decline">Refuser</button>
-  </div>
-</div> -->
-
-
 
 </body>
 </html>
