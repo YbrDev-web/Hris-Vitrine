@@ -42,6 +42,9 @@
       @endforeach
 
       <button style="background-color: #187B8C; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Ajouter article</button>
+      <a href="{{ url('/rss') }}" target="_blank" class="btn btn-outline-info">
+        S'abonner au flux RSS
+      </a>
 
 
     </div>

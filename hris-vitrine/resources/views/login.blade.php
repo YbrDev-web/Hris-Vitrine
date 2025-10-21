@@ -23,9 +23,5 @@
             Continuer avec Microsoft
         </button>
     </div>
-
-    <div class="text-center mt-4">
-      <small class="text-muted">En vous connectant, vous acceptez nos <a href="#">conditions d’utilisation</a>.</small>
-    </div>
   </div>
 </section>
