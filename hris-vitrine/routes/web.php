@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\RSSController;
+use App\Http\Controllers\RegisterController;
 
 
 
@@ -22,6 +23,7 @@ Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])-
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::get('/register', [RegisterController::class, 'show'])->name('Register');
 
 
 
