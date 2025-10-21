@@ -362,11 +362,11 @@ body.dark-mode #particles-js {
     </div>
     <div class="dropdown mx-2">
     <button class="btn btn-link text-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      🌍 FR - FR
+      🌍 FR
     </button>
     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
-      <li><button class="dropdown-item" type="button">FR - FR</button></li>
-      <li><button class="dropdown-item" type="button">EN - EN</button></li>
+      <li><button class="dropdown-item" type="button">FR</button></li>
+      <li><button class="dropdown-item" type="button">EN</button></li>
     </ul>
   </div>
 </nav>
