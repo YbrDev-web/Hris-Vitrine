@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\RSSController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -23,8 +24,12 @@ Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])-
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
-Route::get('/register', [RegisterController::class, 'show'])->name('Register');
 
+Route::middleware('auth')->group(function () {
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 
 
