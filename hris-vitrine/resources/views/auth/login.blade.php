@@ -3,29 +3,46 @@
 @section('title', 'Connexion')
 
 @section('content')
-<section class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
-  <div class="card shadow-lg border-0 p-4" style="max-width: 420px; width: 100%; border-radius: 12px;">
-    <div class="text-center mb-4">
-      <img src="images/logoHRIS.png" alt="Logo HRIS PRO CONSULTING" width="80" class="mb-2">
-      <h4 class="fw-bold">Connexion</h4>
-      <p class="text-muted">Connectez-vous pour interagir avec nos contenus</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - MuscuScore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+</head>
+<body>
+
+    <div class="logo">MUSCUSCORE</div>
+
+    <div class="decor">
+        <div></div>
+        <div></div>
+        <div style="width: 20px; margin-left: 20px;"></div>
     </div>
 
-    <!-- ✅ Boutons de connexion -->
-    <div class="d-grid gap-3">
-        <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3"><a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
-            Continuer avec LinkedIn
-        </button>
-        <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3">
-            Continuer avec Google
-        </button>
-        <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3">
-            Continuer avec Microsoft
-        </button>
+    <div class="login-container">
+        <h2>SE CONNECTER</h2>
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="remember"> Garder la session ouverte
+                </label>
+            </div>
+
+            <div class="forgot-password">
+                <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>
+            </div>
+
+            <button type="submit">SE CONNECTER</button>
+        </form>
     </div>
 
-    <div class="text-center mt-4">
-      <small class="text-muted">En vous connectant, vous acceptez nos <a href="#">conditions d’utilisation</a>.</small>
-    </div>
-  </div>
-</section>
+</body>
+</html>

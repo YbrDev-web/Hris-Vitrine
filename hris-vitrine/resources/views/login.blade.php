@@ -16,12 +16,12 @@
         <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3"><a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
             Continuer avec LinkedIn
         </button>
-        <!-- <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3">
+        <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3">
             Continuer avec Google
         </button>
         <button onclick="openLinkedInPopup()" class="btn btn-outline-primary w-100 mb-3">
             Continuer avec Microsoft
-        </button> -->
+        </button>
     </div>
   </div>
 </section>
