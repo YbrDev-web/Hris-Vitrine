@@ -591,27 +591,8 @@ body.dark-mode #particles-js {
   "retina_detect": true
 });
 
-function openLinkedInPopup(provider = 'LinkedIn') {
-    const width = 600;
-    const height = 650;
-    const left = (window.innerWidth / 2) - (width / 2);
-    const top = (window.innerHeight / 2) - (height / 2);
 
-    // Simulation d'une ouverture de fenêtre OAuth
-    const popup = window.open(
-        `https://auth.${provider.toLowerCase()}.com`,
-        `${provider} Login`,
-        `width=${width},height=${height},top=${top},left=${left}`
-    );
 
-    // Simulation de la fermeture après un "login"
-    setTimeout(() => {
-        if (popup && !popup.closed) {
-            popup.close();
-            alert(`Connexion réussie via ${provider} ✅`);
-        }
-    }, 2000);
-}
 
 // Attacher les bons fournisseurs à chaque bouton
 document.addEventListener('DOMContentLoaded', () => {
@@ -629,6 +610,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function openPopup(url) {
+    const width = 600;
+    const height = 700;
+    const left = (window.innerWidth / 2) - (width / 2);
+    const top = (window.innerHeight / 2) - (height / 2);
+
+    // 🚀 Ouvre la popup de connexion
+    const popup = window.open(
+        url,
+        'SocialLogin',
+        `width=${width},height=${height},top=${top},left=${left},resizable=no,scrollbars=yes,status=no`
+    );
+
+    // 🔄 Vérifie si la popup est fermée, puis recharge la page
+    const timer = setInterval(() => {
+        if (popup.closed) {
+            clearInterval(timer);
+            window.location.reload();
+        }
+    }, 500);
+}
 
 });
 

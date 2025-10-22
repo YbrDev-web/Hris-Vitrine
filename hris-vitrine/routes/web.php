@@ -26,7 +26,7 @@ Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index']
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 
-Route::get('/auth/redirect', [SocialiteController::class, 'redirect']);
+Route::get('/auth/redirect', [SocialiteController::class, 'redirect'])->name('socialite.redirect');
 Route::get('/auth/callback', [SocialiteController::class, 'callback']);
 
 
