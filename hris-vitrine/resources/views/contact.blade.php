@@ -12,18 +12,24 @@
 
     <form method="POST" action="{{ route('contact.submit') }}" class="col-md-8 mx-auto bg-white p-4 rounded shadow">
         @csrf
+
         <div class="mb-3">
-            <label for="name" class="form-label">Nom complet</label>
+            <label for="message" class="form-label">Votre message*</label>
+            <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom complet*</label>
             <input type="text" class="form-control" name="name" id="name" required>
         </div>
 
         <div class="mb-3">
-            <label for="email" class="form-label">Adresse email</label>
+            <label for="email" class="form-label">Adresse email*</label>
             <input type="email" class="form-control" name="email" id="email" required>
         </div>
 
         <div class="mb-3">
-            <label for="Organisation" class="form-label">Organisation</label>
+            <label for="Organisation" class="form-label">Organisation*</label>
             <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
         </div>
 
@@ -39,10 +45,7 @@
             <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
         </div>
 
-        <div class="mb-3">
-            <label for="message" class="form-label">Votre message</label>
-            <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-        </div>
+        
 
         
 
