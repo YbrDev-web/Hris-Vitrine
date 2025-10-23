@@ -7,51 +7,46 @@
     <h1 class="text-center mb-4">Contactez-nous</h1>
 
     @if(session('success'))
-        <div class="alert alert-success text-center">{{ session('success') }}</div>
-    @endif
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
 
-    <form method="POST" action="{{ route('contact.submit') }}" class="col-md-8 mx-auto bg-white p-4 rounded shadow">
-        @csrf
+<form action="{{ route('contact.store') }}" method="POST">
+    @csrf
 
-        <div class="mb-3">
-            <label for="message" class="form-label">Votre message*</label>
-            <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-        </div>
-        
-        <div class="mb-3">
-            <label for="name" class="form-label">Nom complet*</label>
-            <input type="text" class="form-control" name="name" id="name" required>
-        </div>
+    <div>
+        <label>Nom complet</label>
+        <input type="text" name="full_name" value="{{ old('full_name') }}" required>
+        @error('full_name') <span>{{ $message }}</span> @enderror
+    </div>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Adresse email*</label>
-            <input type="email" class="form-control" name="email" id="email" required>
-        </div>
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" value="{{ old('email') }}" required>
+        @error('email') <span>{{ $message }}</span> @enderror
+    </div>
 
-        <div class="mb-3">
-            <label for="Organisation" class="form-label">Organisation*</label>
-            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
-        </div>
+    <div>
+        <label>Organisation</label>
+        <input type="text" name="organization" value="{{ old('organization') }}">
+    </div>
 
-        
-        <div class="mb-3">
-            <label for="Organisation" class="form-label">Ville *</label>
-            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
-        </div>
+    <div>
+        <label>Ville</label>
+        <input type="text" name="city" value="{{ old('city') }}">
+    </div>
 
-        
-        <div class="mb-3">
-            <label for="Organisation" class="form-label">Telephone *</label>
-            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
-        </div>
+    <div>
+        <label>Téléphone</label>
+        <input type="text" name="phone_number" value="{{ old('phone_number') }}">
+    </div>
 
-        
+    <div>
+        <label>Message</label>
+        <textarea name="message" required>{{ old('message') }}</textarea>
+        @error('message') <span>{{ $message }}</span> @enderror
+    </div>
 
-        
+    <button type="submit">Envoyer</button>
+</form>
 
-        <input type="text" name="website" style="display:none">
-
-        <button type="submit" class="btn btn-success w-100">Envoyer</button>
-    </form>
-</section>
 @endsection
