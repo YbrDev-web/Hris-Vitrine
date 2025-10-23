@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
@@ -20,6 +21,8 @@ class ContactController extends Controller
         ]);
 
         Contact::create($validated);
+
+        Mail::to('ybenromdhane2003@gmail.com')->send(new ContactMail($validated));
         
         return back()->with('success', 'Votre message a bien été envoyé !');
     }
