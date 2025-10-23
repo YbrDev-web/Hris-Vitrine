@@ -23,9 +23,28 @@
         </div>
 
         <div class="mb-3">
+            <label for="Organisation" class="form-label">Organisation</label>
+            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
+        </div>
+
+        
+        <div class="mb-3">
+            <label for="Organisation" class="form-label">Ville *</label>
+            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
+        </div>
+
+        
+        <div class="mb-3">
+            <label for="Organisation" class="form-label">Telephone *</label>
+            <input type="Organisation" class="form-control" name="Organisation" id="Organisation" required>
+        </div>
+
+        <div class="mb-3">
             <label for="message" class="form-label">Votre message</label>
             <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
         </div>
+
+        
 
         <input type="text" name="website" style="display:none">
 
