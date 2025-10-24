@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
+
 
 class ContactController extends Controller
 {
@@ -22,7 +23,7 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        Mail::to('ybenromdhane2003@gmail.com')->send(new ContactMail($validated));
+        Mail::to('ybenromdhane2003@gmail.com')->send(new ContactMail($validated['message']));
         
         return back()->with('success', 'Votre message a bien été envoyé !');
     }
