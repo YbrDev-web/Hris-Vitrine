@@ -27,6 +27,7 @@ Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index']
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/articles', [RssController::class, 'index'])->name('articles.index');
 
 
 
