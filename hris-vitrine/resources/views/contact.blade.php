@@ -72,6 +72,16 @@
         </div>
 
         <div class="mb-3">
+            <label for="phone_number" class="form-label">LinkedIn</label>
+            <input 
+                type="text" 
+                name="linkedin" 
+                id="linkedin" 
+                class="form-control" 
+                value="{{ old('linkedin') }}">
+        </div>
+
+        <div class="mb-3">
             <label for="message" class="form-label">Votre message</label>
             <textarea 
                 name="message" 

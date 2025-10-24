@@ -18,6 +18,7 @@ class ContactController extends Controller
             'organization' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'phone_number' => 'required|string|max:255',
+            'linkedin' => 'required|string|max:255',
             'message' => 'required|string|max:255',
         ]);
 

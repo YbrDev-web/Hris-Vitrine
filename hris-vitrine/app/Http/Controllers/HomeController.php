@@ -15,7 +15,10 @@ class HomeController extends Controller
     }
 
     // Page de contact
-    
+    public function contactForm()
+    {
+        return view('contact');
+    }
     
     
 

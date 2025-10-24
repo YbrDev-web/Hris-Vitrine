@@ -15,6 +15,7 @@ class Contact extends Model
         'organization',
         'city',
         'phone_number',
+        'linkedin',
         'message',
     ];
 }
