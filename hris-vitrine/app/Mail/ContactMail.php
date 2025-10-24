@@ -24,7 +24,7 @@ class ContactMail extends Mailable
 
     public function build(){
         return $this->subject('nouveau message de contact')
-                    ->view('emails.contact')
+                    ->view('emails.message')
                     ->with([
                         'messageContent'=> $this->messageContent,
                     ]);
