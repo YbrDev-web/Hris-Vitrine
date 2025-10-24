@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('phone_number')->nullable();
             $table->text('message');
+            $table->text('linkedin');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
     <div class="row g-4" id="knowledge-list">
 
       @foreach ([
-        ['title' => 'Transformation Digitale RH', 'img' => 'https://blog.workday.com/en-us/rss.xml', 'desc' => 'Les enjeux et défis de la digitalisation RH.'],
+        ['title' => 'Transformation Digitale RH', 'img' => 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les enjeux et défis de la digitalisation RH.'],
         ['title' => 'Optimisation des Données RH', 'img' => 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=800&q=80', 'desc' => 'Comment mieux piloter la performance RH avec la data.'],
         ['title' => 'Formation & Adoption Workday', 'img' => 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les bonnes pratiques pour favoriser l’adoption de Workday.'],
       ] as $index => $card)
@@ -42,7 +42,7 @@
       @endforeach
 
       <button style="background-color: #187B8C; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Ajouter article</button>
-      <a href="{{ url('/https://blog.workday.com/en-us/rss.xml') }}" target="_blank" class="btn btn-outline-info">
+      <a href="{{ url('/rss') }}" target="_blank" class="btn btn-outline-info">
         S'abonner au flux RSS
       </a>
 
