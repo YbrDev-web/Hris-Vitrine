@@ -26,6 +26,7 @@ Route::get('/a-propos', [App\Http\Controllers\AboutController::class, 'index'])-
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 Route::get('/Knowledge', [HomeController::class, 'knowledge'])->name('Knowledge');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::get('/register', [RegisterController::class, 'show'])->name('Register');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/articles', [RssController::class, 'index'])->name('articles.index');
 
