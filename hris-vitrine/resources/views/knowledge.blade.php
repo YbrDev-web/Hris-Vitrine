@@ -12,7 +12,7 @@
     </p>
 
     <div class="row g-4" id="knowledge-list">
-
+      
       @foreach ([
         ['title' => 'Transformation Digitale RH', 'img' => 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80', 'desc' => 'Les enjeux et défis de la digitalisation RH.'],
         ['title' => 'Optimisation des Données RH', 'img' => 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=800&q=80', 'desc' => 'Comment mieux piloter la performance RH avec la data.'],
