@@ -243,6 +243,7 @@
     object-fit: contain;
   }
 
+  /* modélisation des card*/
   .knowledge-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
@@ -262,7 +263,7 @@ body.dark-mode #particles-js {
   background: radial-gradient(circle at center, #000, #0a0a0a);
 }
 
-.cookie-banner {
+/* .cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -301,7 +302,7 @@ body.dark-mode #particles-js {
 .btn-cookie.decline {
   background-color: #444;
   color: white;
-}
+} */
 
 
 
@@ -329,6 +330,7 @@ body.dark-mode #particles-js {
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
+              <!-- Lien de redirection des differentes pages du site -->
             <li><a class="nav-link" href="{{ route('home') }}"><span data-translate="home">Accueil</span></a></li>
             <li><a class="nav-link" href="{{ route('about') }}"><span data-translate="about">À propos</span></a></li>
             <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="Article">Article</span></a></li>
@@ -385,6 +387,7 @@ body.dark-mode #particles-js {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Section Traduction -->
 <script>
   const translations = {
     fr: {
@@ -428,6 +431,7 @@ body.dark-mode #particles-js {
 </script>
 
 <script>
+  //button javascript pour les dropDown
   const langButtons = document.querySelectorAll('.dropdown-item');
   const langDropdown = document.getElementById('langDropdown');
 
@@ -454,64 +458,6 @@ body.dark-mode #particles-js {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-  // Charger les notes existantes
-  const ratings = JSON.parse(localStorage.getItem('knowledgeRatings')) || {};
-
-  document.querySelectorAll('.rating').forEach(ratingDiv => {
-    const cardId = ratingDiv.dataset.cardId;
-    const stars = ratingDiv.querySelectorAll('.star');
-    const avgDisplay = document.getElementById('avg-' + cardId);
-
-    // Si une note existe déjà, l’afficher
-    if (ratings[cardId]) {
-      updateStars(stars, ratings[cardId].average);
-      avgDisplay.textContent = ratings[cardId].average.toFixed(1);
-    }
-
-    // Écouteur sur chaque étoile
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
-        const value = parseInt(star.dataset.value);
-
-        // Enregistrer la note dans le localStorage
-        if (!ratings[cardId]) {
-          ratings[cardId] = { total: 0, count: 0, average: 0 };
-        }
-
-        ratings[cardId].total += value;
-        ratings[cardId].count++;
-        ratings[cardId].average = ratings[cardId].total / ratings[cardId].count;
-
-        localStorage.setItem('knowledgeRatings', JSON.stringify(ratings));
-
-        // Mettre à jour l’affichage
-        updateStars(stars, ratings[cardId].average);
-        avgDisplay.textContent = ratings[cardId].average.toFixed(1);
-      });
-
-      // Effet visuel au survol
-      star.addEventListener('mouseover', () => highlightStars(stars, parseInt(star.dataset.value)));
-      star.addEventListener('mouseleave', () => {
-        const avg = ratings[cardId]?.average || 0;
-        updateStars(stars, avg);
-      });
-    });
-  });
-
-  // Fonction pour mettre à jour les étoiles
-  function updateStars(stars, average) {
-    stars.forEach((star, index) => {
-      star.classList.toggle('active', index < Math.round(average));
-    });
-  }
-
-  // Fonction effet hover
-  function highlightStars(stars, value) {
-    stars.forEach((star, index) => {
-      star.style.color = index < value ? '#FFD700' : '#ccc';
-    });
-  }
 
   function socialLogin(platform) {
     localStorage.setItem('userLoggedIn', 'true');
@@ -530,6 +476,7 @@ body.dark-mode #particles-js {
     }, 1600);
   }
 
+  //Fonction pour activer les particles
   particlesJS('particles-js', {
   "particles": {
     "number": {
@@ -572,46 +519,46 @@ body.dark-mode #particles-js {
 
 
 
-// Attacher les bons fournisseurs à chaque bouton
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('button');
+// // Attacher les bons fournisseurs à chaque bouton
+// document.addEventListener('DOMContentLoaded', () => {
+//     const buttons = document.querySelectorAll('button');
 
-    buttons.forEach((btn) => {
-        if (btn.textContent.includes('LinkedIn')) {
-            btn.onclick = () => openLinkedInPopup('LinkedIn');
-        } else if (btn.textContent.includes('Google')) {
-            btn.classList.add('btn-google');
-            btn.onclick = () => openLinkedInPopup('Google');
-        } else if (btn.textContent.includes('Microsoft')) {
-            btn.classList.add('btn-microsoft');
-            btn.onclick = () => openLinkedInPopup('Microsoft');
-        }
-    });
-});
+//     buttons.forEach((btn) => {
+//         if (btn.textContent.includes('LinkedIn')) {
+//             btn.onclick = () => openLinkedInPopup('LinkedIn');
+//         } else if (btn.textContent.includes('Google')) {
+//             btn.classList.add('btn-google');
+//             btn.onclick = () => openLinkedInPopup('Google');
+//         } else if (btn.textContent.includes('Microsoft')) {
+//             btn.classList.add('btn-microsoft');
+//             btn.onclick = () => openLinkedInPopup('Microsoft');
+//         }
+//     });
+// });
 
-function openPopup(url) {
-    const width = 600;
-    const height = 700;
-    const left = (window.innerWidth / 2) - (width / 2);
-    const top = (window.innerHeight / 2) - (height / 2);
+// function openPopup(url) {
+//     const width = 600;
+//     const height = 700;
+//     const left = (window.innerWidth / 2) - (width / 2);
+//     const top = (window.innerHeight / 2) - (height / 2);
 
-    // 🚀 Ouvre la popup de connexion
-    const popup = window.open(
-        url,
-        'SocialLogin',
-        `width=${width},height=${height},top=${top},left=${left},resizable=no,scrollbars=yes,status=no`
-    );
+//     // 🚀 Ouvre la popup de connexion
+//     const popup = window.open(
+//         url,
+//         'SocialLogin',
+//         `width=${width},height=${height},top=${top},left=${left},resizable=no,scrollbars=yes,status=no`
+//     );
 
-    // 🔄 Vérifie si la popup est fermée, puis recharge la page
-    const timer = setInterval(() => {
-        if (popup.closed) {
-            clearInterval(timer);
-            window.location.reload();
-        }
-    }, 500);
-}
+//     // 🔄 Vérifie si la popup est fermée, puis recharge la page
+//     const timer = setInterval(() => {
+//         if (popup.closed) {
+//             clearInterval(timer);
+//             window.location.reload();
+//         }
+//     }, 500);
+// }
 
-});
+// });
 
 </script>
 
