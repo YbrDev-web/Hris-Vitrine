@@ -6,27 +6,30 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function show()
+    public function showRegistrationForm()
     {
-        return view('Register');
+        return view('register');
     }
 
     public function register(Request $request)
     {
-        $credentials = $request->validate([
-            'name' => ['required'],
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'linkedin' => 'nullable|url|max:255',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
-        if (Auth::attempt($credentials, $request->remember)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/home'); // page après enregistrement
-        }
-
-        return back()->withErrors([
-            'email' => 'Email déjà utilisé',
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'linkedin' => $validated['linkedin'] ?? null,
+            'password' => Hash::make($validated['password']),
         ]);
+
+        auth()->login($user);
+
+        return redirect()->route('home')->with('success', 'Bienvenue sur HRIS PRO CONSULTING !');
     }
 
 }
