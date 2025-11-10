@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Knowledge')
+@section('title', 'Articles')
 
 @section('content')
 <section class="py-5">
