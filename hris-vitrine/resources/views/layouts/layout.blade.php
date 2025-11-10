@@ -332,7 +332,8 @@ body.dark-mode #particles-js {
               <!-- Lien de redirection des differentes pages du site -->
             <li><a class="nav-link" href="{{ route('home') }}"><span data-translate="home">Accueil</span></a></li>
             <li><a class="nav-link" href="{{ route('about') }}"><span data-translate="about">À propos</span></a></li>
-            <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="Article">Article</span></a></li>
+            <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="Connaissance">Knowledge</span></a></li>
+            <li><a class="nav-link" href="{{ route('articles') }}"><span data-translate="Article">Article</span></a></li>
             <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
             <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
             <!-- <li><a class="nav-link" href="{{ route('login') }}"><span data-translate="Login">Connexion</span></a></li>

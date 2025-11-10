@@ -6,7 +6,7 @@
 <section class="py-5">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="fw-bold" style="color:#21ACC4;">Base de Connaissances</h1>
+      <h1 class="fw-bold" style="color:#21ACC4;">Articles</h1>
       <button class="btn" style="background-color: #187B8C; color: white;"
               data-bs-toggle="modal" data-bs-target="#addFeedModal">
         + Ajouter flux RSS
@@ -44,7 +44,7 @@
         <h5 class="modal-title" id="addFeedModalLabel">Ajouter un flux RSS</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
-      <form method="POST" action="{{ route('feeds.store') }}">
+      
         @csrf
         <div class="modal-body">
           <div class="mb-3">

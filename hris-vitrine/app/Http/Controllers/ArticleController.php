@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Feeds;
 
-class RssController extends Controller
+class ArticleController extends Controller
 {
     public function index()
     {
@@ -38,6 +38,6 @@ class RssController extends Controller
         // Trie les articles du plus récent au plus ancien
         usort($articles, fn($a, $b) => strtotime($b['date']) - strtotime($a['date']));
 
-        return view('rss.index', compact('articles'));
+        return view('Article', compact('articles'));
     }
 }

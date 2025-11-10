@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KnowledgeController;
-use App\Http\Controllers\RSSController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
@@ -30,7 +30,7 @@ Route::get('/register', [RegisterController::class, 'show'])->name('register');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/articles', [RssController::class, 'index'])->name('articles.index');
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 
 
 

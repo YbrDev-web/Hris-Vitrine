@@ -41,10 +41,10 @@
       </div>
       @endforeach
 
-      <button style="background-color: #187B8C; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;"> + Ajouter article</button>
+      <!-- <button style="background-color: #187B8C; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;"> + Ajouter article</button>
       <a href="{{ url('https://www.deloitte.com/fr/fr/services/audit-assurance/services/myregmonitoring.html') }}" target="_blank" class="btn btn-outline-info">
         S'abonner au flux RSS
-      </a>
+      </a> -->
 
 
     </div>
