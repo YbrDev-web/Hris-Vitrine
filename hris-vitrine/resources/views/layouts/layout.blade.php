@@ -336,6 +336,7 @@ body.dark-mode #particles-js {
             <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
             <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
             <li><a class="nav-link" href="{{ route('login') }}"><span data-translate="Login">Connexion</span></a></li>
+            <li><a class="nav-link" href="{{ route('Register') }}"><span data-translate="Login">S'inscrire</span></a></li>
             <!-- <li><a href="{{ route('login') }}" class="btn btn-outline-light ms-3">Connexion</a></li> -->
             <!-- <li><a href="{{ route('Register') }}" class="btn btn-outline-light ms-3">S'inscrire</a></li> -->
             <!-- <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="btn btn-outline-danger">Déconnexion</button></form> -->
