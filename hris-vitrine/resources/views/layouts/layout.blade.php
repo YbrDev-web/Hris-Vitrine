@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - HRIS PRO CONSULTING</title>
 
-    <!-- ✅ Bootstrap -->
+    <!-- ================== FONTS & ICONS ================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z+Pcb8u5DEJmWxuQe1M9O1rcSg4Az+ljXTT8mf4hKqgIUVBIFNgEzJpIbIFx5F5hoWlBY3EliYHQm5q4+f6AMg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- ================== BOOTSTRAP ================== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- ✅ Google Font Particules--> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <!-- ================== PARTICLES.JS ================== -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
+
+    <!-- ================== STYLES ================== -->
     <style>
+        /* ================== VARIABLES ================== */
         :root {
             --primary: #21ACC4;
             --primary-dark: #187B8C;
@@ -21,6 +31,7 @@
             --bg-light: #f8f9fa;
         }
 
+        /* ================== GLOBAL ================== */
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-light);
@@ -29,7 +40,12 @@
             line-height: 1.6;
         }
 
-        /* ✅ CSS NAVBAR */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        /* ================== NAVBAR ================== */
         .navbar {
             background-color: #000 !important;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -56,20 +72,27 @@
             transform: translateY(-1px);
         }
 
-        /* ✅ SECTION HERO */
-        .hero {
-          position: relative;
-          height: 100vh;
-          color: white;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          overflow: hidden;
+        body.dark-mode .navbar {
+            background-color: #1f1f1f;
         }
 
-/* ✅ Particles en arrière-plan */
+        body.dark-mode .navbar-nav a {
+            color: #f1f1f1 !important;
+        }
+
+        /* ================== HERO ================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
         #particles-js {
             position: absolute;
             top: 0;
@@ -80,12 +103,14 @@
             background: radial-gradient(circle at center, #21ACC4, #000);
         }
 
-/* ✅ Contenu du Hero au-dessus */
+        body.dark-mode #particles-js {
+            background: radial-gradient(circle at center, #000, #0a0a0a);
+        }
+
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
 
         .hero h1 {
             font-size: 3.2rem;
@@ -112,11 +137,10 @@
         }
 
         .btn-main:hover {
-            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
-        /* ✅ SECTION EXPERTISES */
+        /* ================== EXPERTISE ================== */
         .expertises {
             text-align: center;
             padding: 100px 20px;
@@ -129,17 +153,15 @@
             color: var(--text-dark);
         }
 
-        .expertise-card {
-            background: #ffffff;
+        .expertise-card, .knowledge-card, .partner-card {
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 40px 25px;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .expertise-card:hover {
+        .expertise-card:hover, .knowledge-card:hover, .partner-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
         .expertise-card h4 {
@@ -148,11 +170,21 @@
             margin-bottom: 15px;
         }
 
-        .expertise-card p {
+        .expertise-card p, .knowledge-card p {
             color: #666;
         }
 
-        /* ✅ FOOTER */
+        .knowledge-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .partner-card img {
+            max-height: 60px;
+            object-fit: contain;
+        }
+
+        /* ================== FOOTER ================== */
         footer {
             background: #0d0d0d;
             color: #ccc;
@@ -166,161 +198,23 @@
             font-weight: 600;
         }
 
-        /* ✅ RESPONSIVE pour la partie mobile*/
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .navbar-nav .nav-link {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-
-            .expertise-card {
-                padding: 30px 20px;
-            }
+        body.dark-mode footer {
+            background-color: #000;
+            color: #aaa;
         }
 
-        body.dark-mode {
-      background-color: #121212;
-      color: #f1f1f1;
-    }
-
-    /* dark mode*/
-    body.dark-mode .navbar {
-      background-color: #1f1f1f;
-    }
-
-    body.dark-mode .navbar-nav a {
-      color: #f1f1f1 !important;
-    }
-
-    body.dark-mode footer {
-      background-color: #000;
-      color: #aaa;
-    }
-
-    body.dark-mode .dropdown-menu {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-    }
-
-    body.dark-mode .dropdown-item {
-      color: #ddd;
-    }
-
-    body.dark-mode .dropdown-item:hover {
-      background-color: #2b2b2b;
-      color: #00b050 !important;
-    }
-
-    body.dark-mode .topbar {
-      background-color: #111;
-      color: #bbb;
-    }
-
-    body.dark-mode .topbar .icon {
-      color: #bbb;
-    }
-
-    /* Partner*/
-    .partner-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-  }
-  .partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
-  .partner-card img {
-    max-height: 60px;
-    object-fit: contain;
-  }
-
-  /* modélisation des card*/
-  .knowledge-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.knowledge-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-.knowledge-card img {
-  height: 200px;
-  object-fit: cover;
-}
-
-
-body.dark-mode #particles-js {
-  background: radial-gradient(circle at center, #000, #0a0a0a);
-}
-
-/* .cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #1b1b1b;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-.cookie-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-cookie {
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  border: none;
-  font-weight: 600;
-}
-
-.btn-cookie.accept {
-  background-color: #007BFF;
-  color: white;
-}
-
-.btn-cookie.decline {
-  background-color: #444;
-  color: white;
-} */
-
-
-
-
-
-
+        /* ================== RESPONSIVE ================== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .navbar-nav .nav-link { margin-left: 0; margin-top: 10px; }
+            .expertise-card { padding: 30px 20px; }
+        }
     </style>
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  integrity="sha512-z+Pcb8u5DEJmWxuQe1M9O1rcSg4Az+ljXTT8mf4hKqgIUVBIFNgEzJpIbIFx5F5hoWlBY3EliYHQm5q4+f6AMg=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-
 </head>
-<body>
 
-<!-- ✅ NAVBAR -->
+<body>
+<!-- ================== NAVBAR ================== -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">HRIS PRO CONSULTING</a>
@@ -329,239 +223,105 @@ body.dark-mode #particles-js {
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <!-- Lien de redirection des differentes pages du site -->
-            <li><a class="nav-link" href="{{ route('home') }}"><span data-translate="home">Accueil</span></a></li>
-            <li><a class="nav-link" href="{{ route('about') }}"><span data-translate="about">À propos</span></a></li>
-            <li><a class="nav-link" href="{{ route('Knowledge') }}"><span data-translate="Connaissance">Knowledge</span></a></li>
-            <li><a class="nav-link" href="{{ route('articles') }}"><span data-translate="Article">Article</span></a></li>
-            <li><a class="nav-link" href="{{ route('services') }}"><span data-translate="services">Services</span></a></li>
-            <li><a class="nav-link" href="{{ route('contact.form') }}"><span data-translate="contact">Contact</span></a></li>
-            <!-- <li><a class="nav-link" href="{{ route('login') }}"><span data-translate="Login">Connexion</span></a></li>
-            <li><a class="nav-link" href="{{ route('register') }}"><span data-translate="Login">S'inscrire</span></a></li> -->
-            <!-- <li><a href="{{ route('login') }}" class="btn btn-outline-light ms-3">Connexion</a></li> -->
-            <!-- <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="btn btn-outline-danger">Déconnexion</button></form> -->
-
-
-            <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
+                <li><a class="nav-link" href="{{ route('home') }}" data-translate="home">Accueil</a></li>
+                <li><a class="nav-link" href="{{ route('about') }}" data-translate="about">À propos</a></li>
+                <li><a class="nav-link" href="{{ route('knowledge') }}" data-translate="Knowledge">Knowledge</a></li>
+                <li><a class="nav-link" href="{{ route('articles') }}" data-translate="Articles">Article</a></li>
+                <li><a class="nav-link" href="{{ route('services') }}" data-translate="services">Services</a></li>
+                <li><a class="nav-link" href="{{ route('contact.form') }}" data-translate="contact">Contact</a></li>
+                <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
             </ul>
         </div>
     </div>
+
+    <!-- Dropdown Langues -->
     <div class="dropdown mx-2">
-    <button class="btn btn-link text-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      🌍 FR
-    </button>
-    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
-      <li><button class="dropdown-item" type="button">FR</button></li>
-      <li><button class="dropdown-item" type="button">EN</button></li>
-      <li><button class="dropdown-item" type="button">EN(RU)</button></li>
-    </ul>
-  </div>
+        <button class="btn btn-link text-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">🌍 FR</button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
+            <li><button class="dropdown-item" type="button">FR</button></li>
+            <li><button class="dropdown-item" type="button">EN</button></li>
+            <li><button class="dropdown-item" type="button">EN(RU)</button></li>
+        </ul>
+    </div>
 </nav>
 
-
-
-<!-- ✅ CONTENU -->
+<!-- ================== CONTENU ================== -->
 <main style="margin-top: 80px;">
     @yield('content')
 </main>
 
-<!-- ✅ FOOTER -->
-<footer class="text-center py-3" style="background-color: #0a0a0a; color: #fff;">
-    <!-- Texte principal -->
+<!-- ================== FOOTER ================== -->
+<footer class="text-center py-3">
     <p class="mb-2">
-        <span style="color:#21ACC4; font-weight:600;">HRIS PRO CONSULTING</span>
-        &copy; {{ date('Y') }} —
-        <span data-translate="footer" style="color:#21ACC4;">Tous droits réservés</span>
+        <span>HRIS PRO CONSULTING</span> &copy; {{ date('Y') }} —
+        <span data-translate="footer">Tous droits réservés</span>
     </p>
-
-    <!-- 🔗 Section réseaux sociaux -->
     <div class="social-section mt-3">
         <p class="text-muted mb-2" style="font-size: 0.9rem;">Suivez-nous :</p>
         <div class="social-icons">
             <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-                     alt="LinkedIn" width="24" height="24"
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" height="24"
                      style="filter: invert(60%) sepia(75%) saturate(500%) hue-rotate(160deg);">
             </a>
         </div>
     </div>
 </footer>
 
+<!-- ================== SCRIPTS ================== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Section Traduction -->
 <script>
-  const translations = {
-    fr: {
-      home: "Accueil",
-      about: "À propos",
-      Article: "Article",
-      services: "Services",
-      contact: "Contact",
-      welcome: "Bienvenue chez HRIS PRO CONSULTING",
-      description: "Nous accompagnons les entreprises dans la mise en place, le déploiement et la maintenance de leurs Systèmes d’Information RH."
-    },
-    en: {
-      home: "Home",
-      about: "About",
-      Article: "Knowledge",
-      services: "Services",
-      contact: "Contact",
-      welcome: "Welcome to HRIS PRO CONSULTING",
-      description: "We support companies in the implementation, deployment, and maintenance of their HR Information Systems."
+    /* ================== Traduction ================== */
+    const translations = {
+        fr: { home:"Accueil", about:"À propos", Article:"Article", services:"Services", contact:"Contact" },
+        en: { home:"Home", about:"About", Article:"Knowledge", services:"Services", contact:"Contact" }
+    };
+
+    const langButtons = document.querySelectorAll('.dropdown-item');
+    const langDropdown = document.getElementById('langDropdown');
+
+    function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
+        langDropdown.textContent = lang === 'fr' ? "🌍 FR - FR" : "🌍 EN - EN";
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            el.textContent = translations[lang][key] || el.textContent;
+        });
     }
-  };
-</script>
 
+    setLanguage(localStorage.getItem('lang') || 'fr');
+    langButtons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.textContent.includes('EN') ? 'en' : 'fr')));
 
-<script>
-  // ✅ Mode sombre persistant
-  const toggle = document.getElementById('theme-toggle');
-  const body = document.body;
+    /* ================== Dark Mode ================== */
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    if (localStorage.getItem('dark-mode') === 'true') { body.classList.add('dark-mode'); toggle.textContent='☀️'; }
 
-  if (localStorage.getItem('dark-mode') === 'true') {
-    body.classList.add('dark-mode');
-    toggle.textContent = '☀️';
-  }
-
-  toggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('dark-mode', isDark);
-  });
-</script>
-
-<script>
-  //button javascript pour les dropDown
-  const langButtons = document.querySelectorAll('.dropdown-item');
-  const langDropdown = document.getElementById('langDropdown');
-
-  function setLanguage(lang) {
-    localStorage.setItem('lang', lang);
-    langDropdown.textContent = (lang === 'fr') ? "🌍 FR - FR" : "🌍 EN - EN";
-    
-    // ✅ Met à jour tous les textes traduisibles
-    document.querySelectorAll('[data-translate]').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      el.textContent = translations[lang][key] || el.textContent;
-    });
-  }
-
-  // ✅ Applique la langue sauvegardée au chargement
-  const savedLang = localStorage.getItem('lang') || 'fr';
-  setLanguage(savedLang);
-
-  // ✅ Lors du clic sur un bouton de langue
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const selectedLang = btn.textContent.includes('EN') ? 'en' : 'fr';
-      setLanguage(selectedLang);
-    });
-  });
-
-
-  function socialLogin(platform) {
-    localStorage.setItem('userLoggedIn', 'true');
-    localStorage.setItem('loginMethod', platform);
-
-    Swal.fire({
-      icon: 'success',
-      title: `Connecté via ${platform}`,
-      text: 'Redirection en cours...',
-      showConfirmButton: false,
-      timer: 1500
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        toggle.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('dark-mode', isDark);
     });
 
-    setTimeout(() => {
-      window.location.href = document.referrer || "{{ route('home') }}";
-    }, 1600);
-  }
-
-  //Fonction pour activer les particles
-  particlesJS('particles-js', {
-  "particles": {
-    "number": {
-      "value": 90,
-      "density": {"enable": true, "value_area": 900}
-    },
-    "color": {"value": "#21ACC4"},
-    "shape": {"type": "circle"},
-    "opacity": {"value": 0.5, "random": false},
-    "size": {"value": 3, "random": true},
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#21ACC4",
-      "opacity": 0.3,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1.5,
-      "direction": "none",
-      "random": false,
-      "out_mode": "out"
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {"enable": true, "mode": "grab"},
-      "onclick": {"enable": true, "mode": "push"}
-    },
-    "modes": {
-      "grab": {"distance": 200, "line_linked": {"opacity": 0.6}},
-      "push": {"particles_nb": 4}
-    }
-  },
-  "retina_detect": true
-});
-
-
-
-
-// // Attacher les bons fournisseurs à chaque bouton
-// document.addEventListener('DOMContentLoaded', () => {
-//     const buttons = document.querySelectorAll('button');
-
-//     buttons.forEach((btn) => {
-//         if (btn.textContent.includes('LinkedIn')) {
-//             btn.onclick = () => openLinkedInPopup('LinkedIn');
-//         } else if (btn.textContent.includes('Google')) {
-//             btn.classList.add('btn-google');
-//             btn.onclick = () => openLinkedInPopup('Google');
-//         } else if (btn.textContent.includes('Microsoft')) {
-//             btn.classList.add('btn-microsoft');
-//             btn.onclick = () => openLinkedInPopup('Microsoft');
-//         }
-//     });
-// });
-
-// function openPopup(url) {
-//     const width = 600;
-//     const height = 700;
-//     const left = (window.innerWidth / 2) - (width / 2);
-//     const top = (window.innerHeight / 2) - (height / 2);
-
-//     // 🚀 Ouvre la popup de connexion
-//     const popup = window.open(
-//         url,
-//         'SocialLogin',
-//         `width=${width},height=${height},top=${top},left=${left},resizable=no,scrollbars=yes,status=no`
-//     );
-
-//     // 🔄 Vérifie si la popup est fermée, puis recharge la page
-//     const timer = setInterval(() => {
-//         if (popup.closed) {
-//             clearInterval(timer);
-//             window.location.reload();
-//         }
-//     }, 500);
-// }
-
-// });
-
+    /* ================== Particles ================== */
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {"value": 90,"density": {"enable": true,"value_area": 900}},
+            "color": {"value": "#21ACC4"},
+            "shape": {"type": "circle"},
+            "opacity": {"value": 0.5,"random": false},
+            "size": {"value": 3,"random": true},
+            "line_linked": {"enable": true,"distance": 150,"color": "#21ACC4","opacity": 0.3,"width": 1},
+            "move": {"enable": true,"speed": 1.5,"direction": "none","random": false,"out_mode": "out"}
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {"onhover": {"enable": true,"mode": "grab"}, "onclick": {"enable": true,"mode": "push"}},
+            "modes": {"grab": {"distance": 200,"line_linked": {"opacity": 0.6}}, "push": {"particles_nb": 4}}
+        },
+        "retina_detect": true
+    });
 </script>
 
 </body>

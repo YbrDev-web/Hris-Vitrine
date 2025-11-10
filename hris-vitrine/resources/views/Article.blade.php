@@ -7,6 +7,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="fw-bold" style="color:#21ACC4;">Articles</h1>
+      <!-- Bouton pour ouvrir le modal -->
       <button class="btn" style="background-color: #187B8C; color: white;"
               data-bs-toggle="modal" data-bs-target="#addFeedModal">
         + Ajouter flux RSS
@@ -16,6 +17,13 @@
     <p class="text-center mb-5 text-muted">
       Découvrez les derniers articles issus des flux Workday et Deloitte.
     </p>
+
+    <!-- Affichage messages flash -->
+    @if(session('success'))
+      <div class="alert alert-success text-center">{{ session('success') }}</div>
+    @elseif(session('error'))
+      <div class="alert alert-danger text-center">{{ session('error') }}</div>
+    @endif
 
     <div class="row g-4">
       @forelse ($articles as $article)
@@ -36,7 +44,7 @@
   </div>
 </section>
 
-<!-- MODAL POUR AJOUTER UN FLUX RSS -->
+<!-- ================== MODAL AJOUT FLUX RSS ================== -->
 <div class="modal fade" id="addFeedModal" tabindex="-1" aria-labelledby="addFeedModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -44,7 +52,9 @@
         <h5 class="modal-title" id="addFeedModalLabel">Ajouter un flux RSS</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
-      
+
+      <!-- Formulaire pour ajouter un flux RSS -->
+      <form method="POST" action="{{ route('Article.index') }}">
         @csrf
         <div class="modal-body">
           <div class="mb-3">
@@ -61,6 +71,7 @@
           <button type="submit" class="btn" style="background-color: #21ACC4; color: white;">Ajouter</button>
         </div>
       </form>
+
     </div>
   </div>
 </div>
