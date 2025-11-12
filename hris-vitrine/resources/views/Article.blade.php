@@ -54,7 +54,7 @@
       </div>
 
       <!-- Formulaire pour ajouter un flux RSS -->
-      <form method="POST" action="{{ route('Article.index') }}">
+      <form method="POST" action="{{ route('feeds.store') }}">
         @csrf
         <div class="modal-body">
           <div class="mb-3">
