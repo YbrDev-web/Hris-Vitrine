@@ -27,21 +27,13 @@
 
             <!-- ⭐ Système de notation -->
             <div class="rating mt-3 text-center" data-card-id="{{ $index }}">
-              <!-- <div class="stars" role="radiogroup" aria-label="Évaluation de cette carte">
-                @for ($i = 1; $i <= 5; $i++)
-                  <button class="star" data-value="{{ $i }}" aria-label="{{ $i }} étoile sur 5">★</button>
-                @endfor
-              </div>
-              <small class="d-block text-muted mt-2">
-                Note moyenne : <span class="average" id="avg-{{ $index }}">0.0</span> / 5
-              </small> -->
             </div>
           </div>
         </div>
       </div>
       @endforeach
 
-      <a href="{{ route('articles') }}" class="btn btn-outline-info"> découvrez + d'Articles</button>
+      <a href="{{ route('articles') }}" class="btn btn-outline-info"> Découvrez + d'articles</button>
       <a href="{{ route('articles') }}" class="btn btn-outline-info">
         S'abonner au flux RSS
       </a>
