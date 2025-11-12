@@ -15,7 +15,7 @@
     </div>
 
     <p class="text-center mb-5 text-muted">
-      Découvrez les derniers articles issus des flux Workday et Deloitte.
+      Découvrez les derniers articles sur le domaine SIRH.
     </p>
 
     <!-- Affichage messages flash -->
