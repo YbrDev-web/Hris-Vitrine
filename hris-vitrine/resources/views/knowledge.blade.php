@@ -34,8 +34,8 @@
       @endforeach
 
       <a href="{{ route('articles') }}" class="btn btn-outline-info"> Découvrez + d'articles</button>
-      <a href="{{ route('articles') }}" class="btn btn-outline-info">
-        S'abonner au flux RSS
+      <!-- <a href="{{ route('articles') }}" class="btn btn-outline-info">
+        S'abonner au flux RSS -->
       </a>
 
 

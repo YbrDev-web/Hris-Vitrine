@@ -40,9 +40,11 @@
       @empty
         <p class="text-center text-muted">Aucun article trouvé pour le moment.</p>
       @endforelse
-    </div>
+    </div>  
   </div>
 </section>
+
+
 
 <!-- ================== MODAL AJOUT FLUX RSS ================== -->
 <div class="modal fade" id="addFeedModal" tabindex="-1" aria-labelledby="addFeedModalLabel" aria-hidden="true">
