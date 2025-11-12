@@ -240,7 +240,7 @@
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
             <li><button class="dropdown-item" type="button">FR</button></li>
             <li><button class="dropdown-item" type="button">EN</button></li>
-            <li><button class="dropdown-item" type="button">EN(RU)</button></li>
+            <!-- <li><button class="dropdown-item" type="button">EN(RU)</button></li> -->
         </ul>
     </div>
 </nav>
