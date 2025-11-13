@@ -48,34 +48,4 @@
 
 
 <!-- ================== MODAL AJOUT FLUX RSS ================== -->
-<div class="modal fade" id="addFeedModal" tabindex="-1" aria-labelledby="addFeedModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #21ACC4; color: white;">
-        <h5 class="modal-title" id="addFeedModalLabel">Ajouter un flux RSS</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
-      </div>
-
-      <!-- Formulaire pour ajouter un flux RSS -->
-      <form method="POST" action="{{ route('feeds.store') }}">
-        @csrf
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="feed_name" class="form-label">Nom du flux</label>
-            <input type="text" name="feed_name" id="feed_name" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label for="feed_url" class="form-label">URL du flux RSS</label>
-            <input type="url" name="feed_url" id="feed_url" class="form-control" required>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-          <button type="submit" class="btn" style="background-color: #21ACC4; color: white;">Ajouter</button>
-        </div>
-      </form>
-
-    </div>
-  </div>
-</div>
 @endsection
