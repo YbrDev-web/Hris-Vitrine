@@ -24,7 +24,10 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        Mail::to('ybenromdhane2003@gmail.com')->send(new ContactMail($validated['message']));
+        Mail::raw($validated['message'], function($mail) {
+            $mail->to('ybenromdhane2003@gmail.com')
+                 ->subject('Nouveau message reçu depuis le formulaire de contact');
+        });
         
         return back()->with('success', 'Votre message a bien été envoyé !');
     }
