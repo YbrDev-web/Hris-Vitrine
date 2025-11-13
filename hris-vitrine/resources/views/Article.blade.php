@@ -1,3 +1,4 @@
+<!-- ================== Page Article terminée ================== -->
 @extends('layouts.layout')
 
 @section('title', 'Articles')
