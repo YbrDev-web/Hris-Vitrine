@@ -356,7 +356,19 @@
         message_label: "Votre message",
         message_placeholder: "Écrivez votre message...",
 
-        send_button: "Envoyer"
+        send_button: "Envoyer",
+
+        // ======== PAGE ARTICLES ========
+        articles_title: "Articles",
+        articles_subtitle: "Découvrez les derniers articles sur le domaine SIRH.",
+
+        add_rss_button: "+ Ajouter flux RSS",
+
+        article_read: "Lire l'article",
+        article_empty: "Aucun article trouvé pour le moment.",
+
+        flash_success: "Flux ajouté avec succès.",
+        flash_error: "Une erreur est survenue."
     },
 
     en: {
@@ -409,7 +421,19 @@
         message_label: "Your message",
         message_placeholder: "Write your message...",
 
-        send_button: "Send"
+        send_button: "Send",
+
+        // ======== PAGE ARTICLES ========
+        articles_title: "Articles",
+        articles_subtitle: "Discover the latest articles in the HRIS field.",
+        
+        add_rss_button: "+ Add RSS feed",
+        
+        article_read: "Read article",
+        article_empty: "No articles found at the moment.",
+        
+        flash_success: "Feed successfully added.",
+        flash_error: "An error has occurred."
     }
 };
 
