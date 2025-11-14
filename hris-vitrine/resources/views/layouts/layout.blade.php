@@ -267,6 +267,7 @@
     </div>
 </footer>
 
+<!-- Pop-up pour ajouter des articles -->
 <div class="modal fade" id="addFeedModal" tabindex="-1" aria-labelledby="addFeedModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
