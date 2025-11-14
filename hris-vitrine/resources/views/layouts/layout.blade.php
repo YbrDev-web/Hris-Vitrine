@@ -306,9 +306,58 @@
 <script>
     /* ================== Traduction ================== */
     const translations = {
-        fr: { home:"Accueil", about:"À propos", Article:"Article", services:"Services", contact:"Contact" },
-        en: { home:"Home", about:"About", Article:"Knowledge", services:"Services", contact:"Contact" }
-    };
+    fr: {
+        home: "Accueil",
+        about: "À propos",
+        Article: "Article",
+        services: "Services",
+        contact: "Contact",
+        footer: "Tous droits réservés",
+
+        hero_title: "Votre partenaire SIRH & Workday",
+        hero_subtitle: "HRIS PRO CONSULTING accompagne les entreprises dans l’optimisation de leurs systèmes RH.",
+        contact_us: "Contactez-nous",
+
+        expertises_title: "Nos expertises",
+
+        expertise1_title: "Conseil SIRH",
+        expertise1_text: "Analyse, cadrage et mise en œuvre de solutions RH adaptées à votre organisation.",
+
+        expertise2_title: "Intégration Workday",
+        expertise2_text: "Déploiement, configuration et accompagnement au changement pour vos équipes.",
+
+        expertise3_title: "Optimisation des processus",
+        expertise3_text: "Audit et amélioration continue de vos processus RH pour une performance durable.",
+
+        knowledge: "Knowledge"
+    },
+
+    en: {
+        home: "Home",
+        about: "About",
+        Article: "Knowledge",
+        services: "Services",
+        contact: "Contact",
+        footer: "All rights reserved",
+
+        hero_title: "Your HRIS & Workday Partner",
+        hero_subtitle: "HRIS PRO CONSULTING supports companies in optimizing their HR systems.",
+        contact_us: "Contact us",
+
+        expertises_title: "Our Expertise",
+
+        expertise1_title: "HRIS Consulting",
+        expertise1_text: "Analysis, scoping and implementation of HR solutions tailored to your organization.",
+
+        expertise2_title: "Workday Integration",
+        expertise2_text: "Deployment, configuration and change management for your teams.",
+
+        expertise3_title: "Process Optimization",
+        expertise3_text: "Audit and continuous improvement of your HR processes for long-term performance.",
+
+        knowledge: "Knowledge"
+    }
+};
 
     const langButtons = document.querySelectorAll('.dropdown-item');
     const langDropdown = document.getElementById('langDropdown');
