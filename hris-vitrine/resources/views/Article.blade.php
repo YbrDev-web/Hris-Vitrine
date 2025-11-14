@@ -19,6 +19,7 @@
       Découvrez les derniers articles sur le domaine SIRH.
     </p>
 
+    
     <!-- Affichage messages flash -->
     @if(session('success'))
       <div class="alert alert-success text-center">{{ session('success') }}</div>
