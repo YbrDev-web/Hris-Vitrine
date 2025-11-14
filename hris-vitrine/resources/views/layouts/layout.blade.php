@@ -368,7 +368,42 @@
         article_empty: "Aucun article trouvé pour le moment.",
 
         flash_success: "Flux ajouté avec succès.",
-        flash_error: "Une erreur est survenue."
+        flash_error: "Une erreur est survenue.",
+
+        // ======== PAGE SERVICES ========
+        services_hero_title: "Nos services",
+        services_hero_subtitle: "Des solutions sur mesure pour accompagner votre transformation digitale RH.",
+
+        services_expertises_title: "Nos expertises",
+        services_expertises_subtitle: "Découvrez les domaines d’intervention de HRIS PRO CONSULTING",
+
+        services1_title: "Conseil SIRH",
+        services1_text: "Diagnostic, cadrage et mise en œuvre de solutions RH adaptées à vos besoins spécifiques.",
+
+        services2_title: "Intégration Workday",
+        services2_text: "Déploiement, paramétrage et accompagnement au changement sur la suite Workday.",
+
+        services3_title: "Optimisation des processus",
+        services3_text: "Audit, automatisation et amélioration continue de vos processus RH pour plus d’efficacité.",
+
+        sectors_title: "Nos secteurs d’intervention",
+        sectors_subtitle: "HRIS PRO CONSULTING accompagne des entreprises de tous horizons dans leur digitalisation RH.",
+
+        sector_finance_title: "Finance",
+        sector_finance_text: "Optimisation des processus RH et paie dans le secteur bancaire et financier.",
+
+        sector_industry_title: "Industrie",
+        sector_industry_text: "Accompagnement des acteurs industriels dans la transformation de leurs SIRH.",
+
+        sector_services_title: "Services",
+        sector_services_text: "Support complet aux entreprises de conseil et de prestation RH.",
+
+        sector_public_title: "Secteur public",
+        sector_public_text: "Accompagnement des institutions publiques dans la modernisation de leurs SIRH.",
+
+        cta_title: "Besoin d’un accompagnement personnalisé ?",
+        cta_text: "Nos experts sont à votre disposition pour échanger sur vos projets Workday ou SIRH.",
+        cta_contact: "Contactez-nous"
     },
 
     en: {
@@ -433,7 +468,42 @@
         article_empty: "No articles found at the moment.",
         
         flash_success: "Feed successfully added.",
-        flash_error: "An error has occurred."
+        flash_error: "An error has occurred.",
+
+        // ======== PAGE SERVICES ========
+        services_hero_title: "Our Services",
+        services_hero_subtitle: "Tailored solutions to support your HR digital transformation.",
+
+        services_expertises_title: "Our Expertise",
+        services_expertises_subtitle: "Discover HRIS PRO CONSULTING's areas of intervention",
+
+        services1_title: "HRIS Consulting",
+        services1_text: "Diagnosis, scoping and implementation of HR solutions tailored to your specific needs.",
+
+        services2_title: "Workday Integration",
+        services2_text: "Deployment, configuration and change management on the Workday suite.",
+
+        services3_title: "Process Optimization",
+        services3_text: "Audit, automation and continuous improvement of your HR processes for greater efficiency.",
+
+        sectors_title: "Our Business Sectors",
+        sectors_subtitle: "HRIS PRO CONSULTING supports companies from all industries in their HR digitalization.",
+
+        sector_finance_title: "Finance",
+        sector_finance_text: "Optimization of HR and payroll processes in the banking and financial sector.",
+
+        sector_industry_title: "Industry",
+        sector_industry_text: "Support for industrial companies in transforming their HRIS.",
+
+        sector_services_title: "Services",
+        sector_services_text: "Full support for consulting and HR service companies.",
+
+        sector_public_title: "Public Sector",
+        sector_public_text: "Support for public institutions in modernizing their HRIS.",
+
+        cta_title: "Need personalized support?",
+        cta_text: "Our experts are available to discuss your Workday or HRIS projects.",
+        cta_contact: "Contact us"
     }
 };
 

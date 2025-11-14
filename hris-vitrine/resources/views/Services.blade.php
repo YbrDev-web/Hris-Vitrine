@@ -8,16 +8,16 @@
 <section class="services-hero text-center py-5" 
          style="background: linear-gradient(135deg, #00b8c9 0%, #007b87 100%); color: white;">
     <div class="container">
-        <h1 class="display-5 fw-bold">Nos services</h1>
-        <p class="lead mt-3">Des solutions sur mesure pour accompagner votre transformation digitale RH.</p>
+        <h1 class="display-5 fw-bold" data-translate="services_hero_title">Nos services</h1>
+        <p class="lead mt-3" data-translate="services_hero_subtitle">Des solutions sur mesure pour accompagner votre transformation digitale RH.</p>
     </div>
 </section>
 
 <!-- ✅ SERVICES GRID -->
 <section class="container py-5">
     <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #00b8c9;">Nos expertises</h2>
-        <p class="text-muted">Découvrez les domaines d’intervention de HRIS PRO CONSULTING</p>
+        <h2 class="fw-bold" style="color: #00b8c9;" data-translate="services_expertises_title">Nos expertises</h2>
+        <p class="text-muted" data-translate="services_expertises_subtitle">Découvrez les domaines d’intervention de HRIS PRO CONSULTING</p>
     </div>
 
     <div class="row text-center">
@@ -26,8 +26,8 @@
                 <div class="mb-3">
                     <i class="bi bi-people-fill" style="font-size: 2rem; color:#00b8c9;"></i>
                 </div>
-                <h5 class="fw-bold text-dark">Conseil SIRH</h5>
-                <p class="text-muted">
+                <h5 class="fw-bold text-dark" data-translate="services1_title">Conseil SIRH</h5>
+                <p class="text-muted" data-translate="services1_text">
                     Diagnostic, cadrage et mise en œuvre de solutions RH adaptées à vos besoins spécifiques.
                 </p>
             </div>
@@ -38,8 +38,8 @@
                 <div class="mb-3">
                     <i class="bi bi-gear-wide-connected" style="font-size: 2rem; color:#00b8c9;"></i>
                 </div>
-                <h5 class="fw-bold text-dark">Intégration Workday</h5>
-                <p class="text-muted">
+                <h5 class="fw-bold text-dark" data-translate="services2_title">Intégration Workday</h5>
+                <p class="text-muted" data-translate="services2_text">
                     Déploiement, paramétrage et accompagnement au changement sur la suite Workday.
                 </p>
             </div>
@@ -50,8 +50,8 @@
                 <div class="mb-3">
                     <i class="bi bi-bar-chart-line-fill" style="font-size: 2rem; color:#00b8c9;"></i>
                 </div>
-                <h5 class="fw-bold text-dark">Optimisation des processus</h5>
-                <p class="text-muted">
+                <h5 class="fw-bold text-dark" data-translate="services3_title">Optimisation des processus</h5>
+                <p class="text-muted" data-translate="services3_text">
                     Audit, automatisation et amélioration continue de vos processus RH pour plus d’efficacité.
                 </p>
             </div>
@@ -62,8 +62,8 @@
 <!-- ✅ SECTEURS D’ACTIVITÉ -->
 <section class="py-5" style="background:#f9f9f9;">
     <div class="container text-center">
-        <h2 class="fw-bold mb-4" style="color:#00b8c9;">Nos secteurs d’intervention</h2>
-        <p class="text-muted mb-5">
+        <h2 class="fw-bold mb-4" style="color:#00b8c9;" data-translate="sectors_title">Nos secteurs d’intervention</h2>
+        <p class="text-muted mb-5" data-translate="sectors_subtitle">
             HRIS PRO CONSULTING accompagne des entreprises de tous horizons dans leur digitalisation RH.
         </p>
         <div class="row">
@@ -87,10 +87,10 @@
 <!-- ✅ CALL TO ACTION -->
 <section class="text-center py-5" style="background: #0d0d0d; color: white;">
     <div class="container">
-        <h2 class="fw-bold mb-3">Besoin d’un accompagnement personnalisé ?</h2>
-        <p class="mb-4">Nos experts sont à votre disposition pour échanger sur vos projets Workday ou SIRH.</p>
+        <h2 class="fw-bold mb-3" data-translate="cta_title">Besoin d’un accompagnement personnalisé ?</h2>
+        <p class="mb-4" data-translate="cta_text">Nos experts sont à votre disposition pour échanger sur vos projets Workday ou SIRH.</p>
         <a href="{{ route('contact.form') }}" class="btn px-4 py-2 fw-bold" 
-           style="background-color:#00b8c9; color:white; border:none;">
+           style="background-color:#00b8c9; color:white; border:none;" data-translate="cta_contact">
            Contactez-nous
         </a>
     </div>
