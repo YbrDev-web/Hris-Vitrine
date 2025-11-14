@@ -4,17 +4,17 @@
 
 @section('content')
 <section class="container py-5">
-    <h1 class="text-center mb-4">Contactez-nous</h1>
+    <h1 class="text-center mb-4" data-translate="contact_title">Contactez-nous</h1>
 
     @if(session('success'))
-        <div class="alert alert-success text-center">{{ session('success') }}</div>
+        <div class="alert alert-success text-center"  data-translate="contact_success">{{ session('success') }}</div>
     @endif
 
     <form method="POST" action="{{ route('contact.store') }}" class="col-md-8 mx-auto bg-white p-4 rounded shadow">
         @csrf
 
         <div class="mb-3">
-            <label for="full_name" class="form-label">Nom complet</label>
+            <label for="full_name" class="form-label" data-translate="full_name_label">Nom complet</label>
             <input 
                 type="text" 
                 name="full_name" 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="email" class="form-label">Adresse email</label>
+            <label for="email" class="form-label" data-translate="email_label">Adresse email</label>
             <input 
                 type="email" 
                 name="email" 
@@ -42,7 +42,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="organization" class="form-label">Organisation</label>
+            <label for="organization" class="form-label" data-translate="organization_label">Organisation</label>
             <input 
                 type="text" 
                 name="organization" 
@@ -52,7 +52,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="city" class="form-label">Ville</label>
+            <label for="city" class="form-label" data-translate="city_label">Ville</label>
             <input 
                 type="text" 
                 name="city" 
@@ -62,7 +62,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="phone_number" class="form-label">Numéro de téléphone</label>
+            <label for="phone_number" class="form-label" data-translate="phone_label">Numéro de téléphone</label>
             <input 
                 type="text" 
                 name="phone_number" 
@@ -72,7 +72,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="phone_number" class="form-label">LinkedIn</label>
+            <label for="phone_number" class="form-label" data-translate="linkedin_label">LinkedIn</label>
             <input 
                 type="text" 
                 name="linkedin" 
@@ -82,7 +82,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="message" class="form-label">Votre message</label>
+            <label for="message" class="form-label" data-translate="message_label">Votre message</label>
             <textarea 
                 name="message" 
                 id="message" 
@@ -94,7 +94,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-danger w-100 py-2 mt-3">Envoyer</button>
+        <button type="submit" class="btn btn-danger w-100 py-2 mt-3" data-translate="send_button">Envoyer</button>
     </form>
 </section>
 @endsection

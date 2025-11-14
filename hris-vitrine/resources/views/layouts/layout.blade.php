@@ -329,7 +329,34 @@
         expertise3_title: "Optimisation des processus",
         expertise3_text: "Audit et amélioration continue de vos processus RH pour une performance durable.",
 
-        knowledge: "Knowledge"
+        knowledge: "Knowledge",
+
+        /* ======== PAGE CONTACT ======== */
+        contact_title: "Contactez-nous",
+        contact_success: "Votre message a bien été envoyé !",
+
+        full_name_label: "Nom complet",
+        full_name_placeholder: "Votre nom complet",
+
+        email_label: "Adresse email",
+        email_placeholder: "Votre adresse email",
+
+        organization_label: "Organisation",
+        organization_placeholder: "Votre organisation",
+
+        city_label: "Ville",
+        city_placeholder: "Votre ville",
+
+        phone_label: "Numéro de téléphone",
+        phone_placeholder: "Votre numéro",
+
+        linkedin_label: "LinkedIn",
+        linkedin_placeholder: "Votre profil LinkedIn",
+
+        message_label: "Votre message",
+        message_placeholder: "Écrivez votre message...",
+
+        send_button: "Envoyer"
     },
 
     en: {
@@ -355,7 +382,34 @@
         expertise3_title: "Process Optimization",
         expertise3_text: "Audit and continuous improvement of your HR processes for long-term performance.",
 
-        knowledge: "Knowledge"
+        knowledge: "Knowledge",
+
+        /* ======== PAGE CONTACT ======== */
+        contact_title: "Contact us",
+        contact_success: "Your message has been successfully sent!",
+
+        full_name_label: "Full name",
+        full_name_placeholder: "Your full name",
+
+        email_label: "Email address",
+        email_placeholder: "Your email address",
+
+        organization_label: "Organization",
+        organization_placeholder: "Your company / organization",
+
+        city_label: "City",
+        city_placeholder: "Your city",
+
+        phone_label: "Phone number",
+        phone_placeholder: "Your phone number",
+
+        linkedin_label: "LinkedIn",
+        linkedin_placeholder: "Your LinkedIn profile",
+
+        message_label: "Your message",
+        message_placeholder: "Write your message...",
+
+        send_button: "Send"
     }
 };
 
