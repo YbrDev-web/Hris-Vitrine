@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+// Ajout d'articles
 Route::post('/articles', [ArticleController::class, 'index'])->name('Articles');
 Route::post('/articles', [ArticleController::class, 'index'])->name('Article.index');
 Route::post('/feeds', [FeedController::class, 'store'])->name('feeds.store');
