@@ -225,8 +225,8 @@
             <ul class="navbar-nav">
                 <li><a class="nav-link" href="{{ route('home') }}" data-translate="home">Accueil</a></li>
                 <li><a class="nav-link" href="{{ route('about') }}" data-translate="about">À propos</a></li>
-                <li><a class="nav-link" href="{{ route('knowledge') }}" data-translate="Knowledge">Knowledge</a></li>
-                <li><a class="nav-link" href="{{ route('articles') }}" data-translate="Articles">Article</a></li>
+                <!-- <li><a class="nav-link" href="{{ route('knowledge') }}" data-translate="Knowledge">Knowledge</a></li> -->
+                <li><a class="nav-link" href="{{ route('articles') }}" data-translate="Knowledge">Connaissance</a></li>
                 <li><a class="nav-link" href="{{ route('services') }}" data-translate="services">Services</a></li>
                 <li><a class="nav-link" href="{{ route('contact.form') }}" data-translate="contact">Contact</a></li>
                 <button id="theme-toggle" class="btn btn-sm btn-outline-success ms-3">🌙</button>
@@ -309,7 +309,7 @@
     fr: {
         home: "Accueil",
         about: "À propos",
-        Article: "Article",
+        Knowledge: "Connaissances",
         services: "Services",
         contact: "Contact",
         footer: "Tous droits réservés",
@@ -409,7 +409,7 @@
     en: {
         home: "Home",
         about: "About",
-        Article: "Knowledge",
+        Knowledge: "Knowledge",
         services: "Services",
         contact: "Contact",
         footer: "All rights reserved",
