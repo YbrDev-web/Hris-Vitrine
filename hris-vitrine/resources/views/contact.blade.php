@@ -94,7 +94,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-danger w-100 py-2 mt-3" data-translate="send_button">Envoyer</button>
+        <button type="submit" class="btn btn-danger w-100 py-2 mt-3" style="background-color: #187B8C; color: white;" data-translate="send_button">Envoyer</button>
     </form>
 </section>
 @endsection
