@@ -359,7 +359,7 @@
         send_button: "Envoyer",
 
         // ======== PAGE ARTICLES ========
-        knowledge_title: "Base de connaissances",
+        knowledge_title: "Base de Connaissances",
         articles_subtitle: "Découvrez les derniers articles sur le domaine SIRH.",
 
         add_rss_button: "+ Ajouter flux RSS",
