@@ -7,7 +7,7 @@
 <section class="py-5">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="fw-bold" style="color:#21ACC4;" data-translate="articles_title">Articles</h1>
+      <h1 class="fw-bold" style="color:#21ACC4;" data-translate="knowledge_title">Base de Connaissances</h1>
       <!-- Bouton pour ouvrir le modal -->
       <button class="btn" style="background-color: #187B8C; color: white;"
               data-bs-toggle="modal" data-bs-target="#addFeedModal" data-translate="add_rss_button">

@@ -359,7 +359,7 @@
         send_button: "Envoyer",
 
         // ======== PAGE ARTICLES ========
-        articles_title: "Articles",
+        knowledge_title: "Base de connaissances",
         articles_subtitle: "Découvrez les derniers articles sur le domaine SIRH.",
 
         add_rss_button: "+ Ajouter flux RSS",
@@ -459,7 +459,7 @@
         send_button: "Send",
 
         // ======== PAGE ARTICLES ========
-        articles_title: "Articles",
+        knowledge_title: "Knowledge",
         articles_subtitle: "Discover the latest articles in the HRIS field.",
         
         add_rss_button: "+ Add RSS feed",
