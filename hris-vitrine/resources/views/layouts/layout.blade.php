@@ -257,7 +257,7 @@
         <span data-translate="footer">Tous droits réservés</span>
     </p>
     <div class="social-section mt-3">
-        <p class="text-muted mb-2" style="font-size: 0.9rem;">Suivez-nous :</p>
+        <p class="text-muted mb-2" style="font-size: 0.9rem;"data-translate="followus">Suivez-nous :</p>
         <div class="social-icons">
             <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn" class="mx-2">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" height="24"
@@ -313,6 +313,7 @@
         services: "Services",
         contact: "Contact",
         footer: "Tous droits réservés",
+        followus : "Suivez nous",
 
         hero_title: "Votre partenaire SIRH & Workday",
         hero_subtitle: "HRIS PRO CONSULTING accompagne les entreprises dans l’optimisation de leurs systèmes RH.",
@@ -413,6 +414,7 @@
         services: "Services",
         contact: "Contact",
         footer: "All rights reserved",
+        followus : "follow-us",
 
         hero_title: "Your HRIS & Workday Partner",
         hero_subtitle: "HRIS PRO CONSULTING supports companies in optimizing their HR systems.",
