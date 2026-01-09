@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Feeds;
 
-class RssController extends Controller
+class Controller extends Controller
 {
     public function index()
     {
